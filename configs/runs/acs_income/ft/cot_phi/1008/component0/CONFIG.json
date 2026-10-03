@@ -1,0 +1,41 @@
+{
+  "task": "acs_income",
+  "seed": 1008,
+  "architecture": "ft",
+  "arm": "cot_phi",
+  "joint": false,
+  "device": "cuda",
+  "initial_state_sha256": "c981d137e2b6e95b5c486e430d6b708e4c9127a582dd748e8d1a74f1d4697659",
+  "epochs": 100,
+  "batch": 512,
+  "optimizer": "native FT optimizer",
+  "selector": "validation AUROC then BCE; FT patience16",
+  "eta": 0.0,
+  "hifi_source_sha256": "cdc01e6313e297520e94a2280e92dcd43485ae28a9af44f57e04d77250e25ecc",
+  "adapter_sha256": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+  "data_hashes": {
+    "x": "630db60be93e299bba77784447469d9e0c74a85dd164b29bdfc600f1cec2eac8",
+    "y": "94e50f0127036795fe9a2682696ce64d09c4d5e49ede401498c541f87f7aabc9",
+    "s": "6eaeef36200d03d5caab1c7097702d4de2f910a7e8aefee6b06fdbbac39748e4"
+  },
+  "split_hashes": {
+    "train": "6a9f4effb2230f29e15e4d4d1d3312d1c4a9c999c92067900304d344578716b9",
+    "val": "cfce9fc9d5eaf554dd6f69a77346dcb55d270d1291371543f2931bbedfda3d3a",
+    "calibration": "d34e90e4b72eef5a1e54ab73787fb47f1bb1fe07a125ce17a513b6d47e308a16",
+    "audit": "5e1d8fc7fcde8ac25c6cf913cb2fda6b92f9bd6b50aa6b55fec68ba04d6a3c8b"
+  },
+  "bank_hashes": {
+    "work_class": "3e8c2636db8f256bbb4c51c17ce4e15f98ca4e2465398608bace63b39bed611e",
+    "household": "29256ddb39e7019526af574613a55ed66874a86bbfb94ca5569401e0b97c9cbb",
+    "occupation": "8189bde55277b03a038716baa9c82913753bd3be4763a5a94c92e287505ef983",
+    "education": "ede02a3d8e48bc919976a49c69e433143acf528d24cac440b614b02bf6008f09",
+    "hours": "65e14e7dd50f44ffa9906be033e866823b0a7bfea61d5a7f6717014689827a3b"
+  },
+  "training_only_preprocessing": true,
+  "selection_uses_audit": false,
+  "native_hifi_schedule": false,
+  "typed_hifi_adapter": "binary sensitive view; ordinary fields kept in shared encoding",
+  "concurrent_runtime": true,
+  "joint_missing_sex_policy": null,
+  "batch_adapter": "shared paper batch512; HIFI publication uses dataset-specific batches for different benchmark datasets"
+}

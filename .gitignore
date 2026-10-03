@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+reproduced/
+retrained/
+.venv/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg

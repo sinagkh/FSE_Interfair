@@ -1,0 +1,49 @@
+{
+  "task": "acs_employment_sex",
+  "seed": 1007,
+  "architecture": "mlp",
+  "arm": "fairsmote",
+  "device": "cpu",
+  "epochs": 40,
+  "batch": 512,
+  "optimizer": "AdamW lr=0.0007 wd=.0001",
+  "selector": "validation AUROC then BCE; FT patience16",
+  "initial_state_sha256": "bc16e4d450dcf0de3c8cf997e42502841ccf992fb3ea383ccdec3165496bb225",
+  "initialization": "random",
+  "source_checkpoint": null,
+  "source_checkpoint_sha256": null,
+  "source_state_sha256": null,
+  "data_hashes": {
+    "x": "a28fd886abccb50375654d9204e9e0e6e78a501d5839a0e87ae743594f6a30d3",
+    "y": "d240307a988caf414541560e4b717cad0f13632ac765278f468842c4673a97fb",
+    "s": "8c7229b2419c1b5d06f0c8ad310010030631100ca6cc9e274f659d6d3720a0c7"
+  },
+  "split_hashes": {
+    "train": "bd826825963d7e53c5f07561734e2c5dd3257c3b6d7707f7eaa81f30588a17dd",
+    "val": "c5dc36cf66eb1324bbb58103260b1b02606802c58c95cd8a89a12cb11e019ac9",
+    "calibration": "3295cbefcb6e6318c9922dc0e2a38585e06e7eacfe41f26afa85be9b43e362ce",
+    "audit": "6cbd3f304a05ab9e98a011110a76e03b464b579b335d9d40d9f86c6018f9ac1e"
+  },
+  "code_hashes": {
+    "interfair/baselines/evaluation/ft/runner.py": "881f09ce70f0ade34b7b6a4a707c5fa9f0bbe3af6489a3963b09be6785a80c8b",
+    "interfair/training/shared/common.py": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+    "interfair/vendor/fairer/celeba/utils_train_alexnet.py": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+    "interfair/baselines/resampling/resampling.py": "27a6bb31c31ee0f7821e286b4eb9ad780acdc9b74af44ff78d55fb68a4751149",
+    "interfair/core/preprocessing_baselines.py": "5df99e1ef0595b935f08bce168cbce90b99e2bbd918a8745bfe3b86f3662e9e5",
+    "interfair/core/ft_architecture.py": "bc72712640906b16dd9a9a83aadd3d99bf0e47d10f42e99bcd0454733c69562b",
+    "interfair/vendor/fair_smote/Generate_Samples.py": "79adcb4e3eae381e3dfed23f54c8d04b781baf92c5612d76bc6e9e3891a69bce"
+  },
+  "adaptations": [
+    "Existing Fair-SMOTE MLP recipe: lr .0007, gradient clip 5, RNG seed+991, 40 epochs."
+  ],
+  "selection_uses_audit": false,
+  "training_only_preprocessing": true,
+  "training_rows": 35128,
+  "train_x_sha256": "00804bcc459dc5508e4fd53054ecd5ae28329d227674e6812f9b871335023fdb",
+  "train_y_sha256": "656fb8815eaa350916a736d44806ad62d61110ba39860c8f57131d8a4dc55a91",
+  "eta": null,
+  "gradient_clip": 5.0,
+  "rationale_weight": null,
+  "endpoint_weight": null,
+  "batch_per_group": null
+}

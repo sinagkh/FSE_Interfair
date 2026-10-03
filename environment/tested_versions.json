@@ -1,0 +1,15 @@
+{
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1063-aws-x86_64-with-glibc2.35",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.1",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "torch": "2.3.1+cu121",
+    "matplotlib": "3.10.8",
+    "threadpoolctl": "3.6.0",
+    "statsmodels": "0.14.6",
+    "tqdm": "4.66.4"
+  }
+}

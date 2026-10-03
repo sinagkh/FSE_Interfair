@@ -1,0 +1,5 @@
+cliff.delta             Cliff's Delta effect size for ordinal variables
+cohen.d                 Cohen's d and Hedges g effect size
+effsize-package         Efficient Effect Size Computation
+print.effsize           Prints effect size
+VD.A                    Vargha and Delaney A measure

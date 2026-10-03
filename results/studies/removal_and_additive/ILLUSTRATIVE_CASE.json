@@ -1,0 +1,84 @@
+{
+  "task": "hmda_oh",
+  "seed": 1000,
+  "edit": "linked_income_plus10k",
+  "anchor_index": 28827,
+  "position_in_supported_bank": 337,
+  "scope": "One illustrative supported held-out input probe, not an observed causal change in an applicant outcome.",
+  "selection": "Seed 1000; both removal and additive decrease each probability by more than .005, while IS increases both by more than .005. Select the median mean absolute additive response among eligible probes.",
+  "eligible_examples": 32,
+  "supported_examples": 675,
+  "models": {
+    "removal": {
+      "logits": [
+        1.2930333614349365,
+        1.1211696863174438,
+        1.2930333614349365,
+        1.1211696863174438
+      ],
+      "probabilities": [
+        0.7846601745248656,
+        0.7542056167873694,
+        0.7846601745248656,
+        0.7542056167873694
+      ],
+      "probability_responses": [
+        -0.03045455773749617,
+        -0.03045455773749617
+      ],
+      "checkpoint": "interfair/data/partitions/runs/main/mlp/hmda_oh/1000/removed/task.pt"
+    },
+    "additive": {
+      "logits": [
+        0.9606316685676575,
+        0.8070968389511108,
+        0.599873423576355,
+        0.44633856415748596
+      ],
+      "probabilities": [
+        0.7232482578689506,
+        0.6914905134884054,
+        0.6456273470009796,
+        0.6097683429478622
+      ],
+      "probability_responses": [
+        -0.03175774438054524,
+        -0.03585900405311737
+      ],
+      "checkpoint": "interfair/studies/learning/runs/hmda_oh/real_additive/1000/selected.pt"
+    },
+    "is": {
+      "logits": [
+        0.5306914448738098,
+        0.8538687229156494,
+        0.5478532910346985,
+        0.8592860698699951
+      ],
+      "probabilities": [
+        0.6296443660630616,
+        0.701378065157331,
+        0.6336373948587753,
+        0.7025114723017719
+      ],
+      "probability_responses": [
+        0.07173369909426941,
+        0.06887407744299656
+      ],
+      "checkpoint": "interfair/training/mlp/runs/confirmation/hmda_oh/1000/equality_direction/selected.pt"
+    }
+  },
+  "edited_raw_values": {
+    "income": [
+      36.99999821186066,
+      46.999999552965164,
+      36.99999821186066,
+      46.999999552965164
+    ],
+    "debt_to_income_ratio": [
+      45.00000020861626,
+      33.00000011920929,
+      45.00000020861626,
+      33.00000011920929
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "package": "ScottKnottESD",
+    "version": "2.0.3",
+    "url": "https://cran.r-project.org/src/contrib/ScottKnottESD_2.0.3.tar.gz",
+    "sha256": "cea6adc107e3de81ccf3209cbea3db893ba69fe4708bc31cd9e35a495193573e"
+  },
+  {
+    "package": "effsize",
+    "version": "0.8.1",
+    "url": "https://cran.r-project.org/src/contrib/effsize_0.8.1.tar.gz",
+    "sha256": "fcb407644e4003089242ba873fdf3b1822f56ed054dc0ffb6a94b8739e80acd4"
+  }
+]

@@ -1,0 +1,4 @@
+"family","error"
+"ablation / acs_employment_age / mlp / direction_adverse_decision","missing value where TRUE/FALSE needed"
+"ablation / acs_income / mlp / opposite_005","missing value where TRUE/FALSE needed"
+"ablation / credit_broad / mlp / opposite_005","missing value where TRUE/FALSE needed"

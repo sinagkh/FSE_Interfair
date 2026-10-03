@@ -1,0 +1,2 @@
+family,reason,constant_arms,action
+policy / hmda_oh / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,policy_p20;policy_valid_only,rank superscripts omitted; all raw metrics and paired tests retained

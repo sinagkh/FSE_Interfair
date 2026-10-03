@@ -1,0 +1,224 @@
+{
+  "status": "complete",
+  "config": {
+    "task": "acs_employment_sex",
+    "seed": 1004,
+    "architecture": "mlp",
+    "arm": "dralign",
+    "device": "cpu",
+    "epochs": 20,
+    "batch": 512,
+    "optimizer": "Adam lr=.001",
+    "selector": "minimum validation soft-DP at zero-based epochs 3..19",
+    "initial_state_sha256": "4511e023320411178e241e52ea84dde6915b1fc152ba077a699b998614c92b05",
+    "initialization": "source ERM",
+    "source_checkpoint": "interfair/training/mlp/runs/confirmation/acs_employment_sex/1004/erm/selected.pt",
+    "source_checkpoint_sha256": "1eaaf7b5339264f06c203cd1ecbbf59137cafbc5293e133a619fc1fb8efaa493",
+    "source_state_sha256": "5c8952558bcec2d118d5fbea4aef6b734a4444a19cb1b00f88d4c6a3f23e8173",
+    "data_hashes": {
+      "x": "a28fd886abccb50375654d9204e9e0e6e78a501d5839a0e87ae743594f6a30d3",
+      "y": "d240307a988caf414541560e4b717cad0f13632ac765278f468842c4673a97fb",
+      "s": "8c7229b2419c1b5d06f0c8ad310010030631100ca6cc9e274f659d6d3720a0c7"
+    },
+    "split_hashes": {
+      "train": "bd826825963d7e53c5f07561734e2c5dd3257c3b6d7707f7eaa81f30588a17dd",
+      "val": "c5dc36cf66eb1324bbb58103260b1b02606802c58c95cd8a89a12cb11e019ac9",
+      "calibration": "3295cbefcb6e6318c9922dc0e2a38585e06e7eacfe41f26afa85be9b43e362ce",
+      "audit": "6cbd3f304a05ab9e98a011110a76e03b464b579b335d9d40d9f86c6018f9ac1e"
+    },
+    "code_hashes": {
+      "interfair/baselines/evaluation/ft/runner.py": "881f09ce70f0ade34b7b6a4a707c5fa9f0bbe3af6489a3963b09be6785a80c8b",
+      "interfair/training/shared/common.py": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+      "interfair/vendor/fairer/celeba/utils_train_alexnet.py": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+      "interfair/baselines/resampling/resampling.py": "27a6bb31c31ee0f7821e286b4eb9ad780acdc9b74af44ff78d55fb68a4751149",
+      "interfair/core/preprocessing_baselines.py": "5df99e1ef0595b935f08bce168cbce90b99e2bbd918a8745bfe3b86f3662e9e5",
+      "interfair/core/ft_architecture.py": "bc72712640906b16dd9a9a83aadd3d99bf0e47d10f42e99bcd0454733c69562b",
+      "interfair/vendor/fair_smote/Generate_Samples.py": "79adcb4e3eae381e3dfed23f54c8d04b781baf92c5612d76bc6e9e3891a69bce"
+    },
+    "adaptations": [
+      "Literal native FAIRER DP epoch, device substitution only; sigmoid wrapper around downstream logits.",
+      "Expose base.net only, exactly as the existing native MLP adapter; unused Predictor offsets are excluded from rationale gradients."
+    ],
+    "selection_uses_audit": false,
+    "training_only_preprocessing": true,
+    "training_rows": 31138,
+    "train_x_sha256": "856dfc3e4ea086e946b23ed99f7b6062464f25746c3c846a8d15e8f2e3336cda",
+    "train_y_sha256": "8d772793f730ef6a9f6c072c5effbd8f10bc7085ed4db211246775fc3e581f84",
+    "eta": null,
+    "gradient_clip": null,
+    "rationale_weight": 0.03,
+    "endpoint_weight": 0.3,
+    "batch_per_group": 1000,
+    "steps_per_epoch": 14
+  },
+  "selected": {
+    "epoch": 10,
+    "soft_dp": 0.0024448781723559465,
+    "validation": {
+      "auc": 0.863074097386056,
+      "ap": 0.8967772390022241,
+      "f1": 0.843895678467935,
+      "accuracy": 0.7859364201796821,
+      "brier": 0.15423480956949992,
+      "bce": 0.47273306991216596,
+      "eomax": 0.15170590262992473,
+      "aod": 0.07644831343924244,
+      "dp": 0.026147245843867295,
+      "group_rates": {
+        "0": {
+          "tpr": 0.9438517686692869,
+          "fpr": 0.3784901758014478,
+          "positive": 0.74490538573508,
+          "n": 2748
+        },
+        "1": {
+          "tpr": 0.945042492917847,
+          "fpr": 0.5301960784313725,
+          "positive": 0.7710526315789473,
+          "n": 3040
+        }
+      }
+    }
+  },
+  "epochs_completed": 19,
+  "checkpoint": "interfair/baselines/evaluation/employment/runs/confirmation/mlp/acs_employment_sex/1004/dralign/selected.pt",
+  "checkpoint_sha256": "1912131eaa8d0fbd9bfd2769e46a7385049442e88a320bc4da70e0f38db97c0d",
+  "arrays_sha256": "b26e85925b5ec628953c198fcbb9dd6bd6f86409fd19d1dec95ac5717e17d34b",
+  "audit": {
+    "auc": 0.8566541568935737,
+    "ap": 0.8905690828958333,
+    "f1": 0.8338272167768407,
+    "accuracy": 0.7716165413533834,
+    "brier": 0.1581008301511449,
+    "bce": 0.48193140931180894,
+    "eomax": 0.1478963514361744,
+    "aod": 0.08095282954580202,
+    "dp": 0.03089983133480423,
+    "group_rates": {
+      "0": {
+        "tpr": 0.9311631061376738,
+        "fpr": 0.404551201011378,
+        "positive": 0.7472964025601413,
+        "n": 4531
+      },
+      "1": {
+        "tpr": 0.9451724137931035,
+        "fpr": 0.5524475524475524,
+        "positive": 0.7781962338949455,
+        "n": 5045
+      }
+    },
+    "L_R": 0.14011237585285413,
+    "violation_005": 0.7726060035752523,
+    "P_R": 0.023031726099143994,
+    "decision_disagreement": 0.03927084672787401,
+    "opposite_005": 0.05843510941483578,
+    "P_population_effect_gap": 0.01435361939421154,
+    "P_mean_common_abs": 0.040113816735226675,
+    "audit_seconds": 0.14506547094788402,
+    "audit_model_rows": 75112,
+    "features": [
+      {
+        "feature": "education",
+        "training": true,
+        "n": 1875,
+        "L_R": 0.11580646342833836,
+        "violation_005": 0.7077333333333333,
+        "P_R": 0.021146689326406707,
+        "decision_disagreement": 0.058666666666666666,
+        "opposite_005": 0.011733333333333333,
+        "P_population_effect_gap": 0.016556631753715207,
+        "P_mean_common_abs": 0.07344439239676323
+      },
+      {
+        "feature": "household",
+        "training": true,
+        "n": 1806,
+        "L_R": 0.11928733452898785,
+        "violation_005": 0.7524916943521595,
+        "P_R": 0.032773271226847506,
+        "decision_disagreement": 0.03045404208194906,
+        "opposite_005": 0.05260243632336656,
+        "P_population_effect_gap": 0.024985868220471788,
+        "P_mean_common_abs": 0.04145087952397864
+      },
+      {
+        "feature": "mobility",
+        "training": true,
+        "n": 1657,
+        "L_R": 0.11625151729855325,
+        "violation_005": 0.7223898611949306,
+        "P_R": 0.017921138232866597,
+        "decision_disagreement": 0.03500301750150875,
+        "opposite_005": 0.07905853952926976,
+        "P_population_effect_gap": 0.004394315814056549,
+        "P_mean_common_abs": 0.030205729288811076
+      },
+      {
+        "feature": "military",
+        "training": true,
+        "n": 1572,
+        "L_R": 0.19308214419599595,
+        "violation_005": 0.8600508905852418,
+        "P_R": 0.022290526862547354,
+        "decision_disagreement": 0.043256997455470736,
+        "opposite_005": 0.03371501272264631,
+        "P_population_effect_gap": 0.01589562180188208,
+        "P_mean_common_abs": 0.035059973481874875
+      },
+      {
+        "feature": "grandchildren",
+        "training": true,
+        "n": 1208,
+        "L_R": 0.1561344198123953,
+        "violation_005": 0.820364238410596,
+        "P_R": 0.021027004847051802,
+        "decision_disagreement": 0.028973509933774833,
+        "opposite_005": 0.11506622516556292,
+        "P_population_effect_gap": 0.009935659380932082,
+        "P_mean_common_abs": 0.020408108984705575
+      },
+      {
+        "feature": "education_hs_bachelor",
+        "training": false,
+        "n": 1875,
+        "L_R": 0.11580646342833836,
+        "violation_005": 0.7077333333333333,
+        "P_R": 0.021146689326406707,
+        "decision_disagreement": 0.058666666666666666,
+        "opposite_005": 0.011733333333333333,
+        "P_population_effect_gap": 0.016556631753715207,
+        "P_mean_common_abs": 0.07344439239676323
+      },
+      {
+        "feature": "education_bachelor_master",
+        "training": false,
+        "n": 1856,
+        "L_R": 0.09797727916959738,
+        "violation_005": 0.6573275862068966,
+        "P_R": 0.01784920337081861,
+        "decision_disagreement": 0.02693965517241379,
+        "opposite_005": 0.057112068965517244,
+        "P_population_effect_gap": 0.017954060779741612,
+        "P_mean_common_abs": 0.022525572529045804
+      },
+      {
+        "feature": "household_third",
+        "training": false,
+        "n": 1750,
+        "L_R": 0.528503146007657,
+        "violation_005": 0.9994285714285714,
+        "P_R": 0.056925627271872836,
+        "decision_disagreement": 0.030857142857142857,
+        "opposite_005": 0.6417142857142857,
+        "P_population_effect_gap": 0.06284320723420364,
+        "P_mean_common_abs": 0.019117229701637532
+      }
+    ]
+  },
+  "seconds": 15.779426780063659,
+  "batch_sha256": "01b46ddf2ba354ab7587424bd3a3d8d2618a2a35f8b87ace09eb414bf3d8d19c",
+  "reload_max_error": 0.0,
+  "selection_finished_before_audit": true,
+  "peak_gpu_bytes": 0
+}

@@ -1,0 +1,327 @@
+[
+  {
+    "task": "hmda_oh",
+    "edit": "income",
+    "sign": 1,
+    "label": "approval",
+    "changed_columns": [
+      "income__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.446153849363327
+      ],
+      [
+        0.7846153974533081
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 605,
+      "audit": 1654
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "hmda_oh",
+    "edit": "debt_to_income_ratio",
+    "sign": -1,
+    "label": "approval",
+    "changed_columns": [
+      "debt_to_income_ratio__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.5789473652839661
+      ],
+      [
+        0.5263158082962036
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 602,
+      "audit": 1666
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "hmda_oh",
+    "edit": "loan_to_value_ratio",
+    "sign": -1,
+    "label": "approval",
+    "changed_columns": [
+      "loan_to_value_ratio__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.5564000010490417
+      ],
+      [
+        0.6108400225639343
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 608,
+      "audit": 1669
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "credit_broad",
+    "edit": "PAY_AMT1",
+    "sign": 1,
+    "label": "non-default",
+    "changed_columns": [
+      "PAY_AMT1__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.4503113329410553
+      ],
+      [
+        0.9713574051856995
+      ]
+    ],
+    "support": {
+      "train": 1949,
+      "val": 732,
+      "audit": 1941
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "credit_broad",
+    "edit": "PAY_AMT2",
+    "sign": 1,
+    "label": "non-default",
+    "changed_columns": [
+      "PAY_AMT2__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.4248916804790497
+      ],
+      [
+        0.9506499767303467
+      ]
+    ],
+    "support": {
+      "train": 1951,
+      "val": 737,
+      "audit": 1946
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "credit_broad",
+    "edit": "PAY_AMT3",
+    "sign": 1,
+    "label": "non-default",
+    "changed_columns": [
+      "PAY_AMT3__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.43795621395111084
+      ],
+      [
+        0.7844282388687134
+      ]
+    ],
+    "support": {
+      "train": 1948,
+      "val": 736,
+      "audit": 1936
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "credit_broad",
+    "edit": "PAY_AMT4",
+    "sign": 1,
+    "label": "non-default",
+    "changed_columns": [
+      "PAY_AMT4__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.40273863077163696
+      ],
+      [
+        0.9397234320640564
+      ]
+    ],
+    "support": {
+      "train": 1949,
+      "val": 732,
+      "audit": 1939
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "credit_broad",
+    "edit": "PAY_AMT5",
+    "sign": 1,
+    "label": "non-default",
+    "changed_columns": [
+      "PAY_AMT5__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.3983005881309509
+      ],
+      [
+        0.9293680191040039
+      ]
+    ],
+    "support": {
+      "train": 1941,
+      "val": 735,
+      "audit": 1942
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "credit_broad",
+    "edit": "PAY_AMT6",
+    "sign": 1,
+    "label": "non-default",
+    "changed_columns": [
+      "PAY_AMT6__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -0.3850596845149994
+      ],
+      [
+        0.8984726071357727
+      ]
+    ],
+    "support": {
+      "train": 1954,
+      "val": 735,
+      "audit": 1948
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "acs_income",
+    "edit": "education",
+    "sign": 1,
+    "label": "income > 50000 under published ACSIncome eligibility; descriptive prediction, not a recorded allocation decision",
+    "changed_columns": [
+      "SCHL=16",
+      "SCHL=22"
+    ],
+    "encoded_endpoints": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 686,
+      "audit": 1847
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "acs_income",
+    "edit": "hours",
+    "sign": 1,
+    "label": "income > 50000 under published ACSIncome eligibility; descriptive prediction, not a recorded allocation decision",
+    "changed_columns": [
+      "WKHP__scaled"
+    ],
+    "encoded_endpoints": [
+      [
+        -1.6666666269302368
+      ],
+      [
+        0.8333333134651184
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 683,
+      "audit": 1800
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "acs_employment_sex",
+    "edit": "education",
+    "sign": 1,
+    "label": "ESR==1, civilian employed at work; published descriptive benchmark target",
+    "changed_columns": [
+      "SCHL=16",
+      "SCHL=21"
+    ],
+    "encoded_endpoints": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 714,
+      "audit": 1875
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "acs_employment_age",
+    "edit": "education",
+    "sign": 1,
+    "label": "ESR==1, civilian employed at work; published descriptive benchmark target",
+    "changed_columns": [
+      "SCHL=16",
+      "SCHL=21"
+    ],
+    "encoded_endpoints": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "support": {
+      "train": 8192,
+      "val": 560,
+      "audit": 1444
+    },
+    "basis": "declared favorable-score monotonicity for this typed edit; not inferred from fitted model"
+  },
+  {
+    "task": "hmda_oh",
+    "edit": "linked_income_plus10k",
+    "sign": 1,
+    "label": "approval",
+    "changed_columns": [
+      "income",
+      "debt_to_income_ratio"
+    ],
+    "basis": "income +10k with unchanged representative debt; disclosed DTI codes",
+    "support": {
+      "train": 645,
+      "val": 247,
+      "audit": 675
+    },
+    "banks_sha256": "2514a684b6e88295e731bd04df3eb903800cf9b4bd68d208a3c62d6faa43d9ef"
+  }
+]

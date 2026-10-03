@@ -1,0 +1,51 @@
+{
+  "task": "acs_employment_age",
+  "seed": 1002,
+  "architecture": "mlp",
+  "arm": "dralign",
+  "device": "cpu",
+  "epochs": 20,
+  "batch": 512,
+  "optimizer": "Adam lr=.001",
+  "selector": "minimum validation soft-DP at zero-based epochs 3..19",
+  "initial_state_sha256": "1c761fd450c29fc9d723a3e17d1b9d9b234f09031b01027036ca52264d53b8ed",
+  "initialization": "source ERM",
+  "source_checkpoint": "interfair/training/mlp/runs/confirmation/acs_employment_age/1002/erm/selected.pt",
+  "source_checkpoint_sha256": "2bea2e91bc927280ee19fa6c128a157f88c4edba8105df47e41f96e819c4e255",
+  "source_state_sha256": "d951540e2cf66a531f0b9cf20f00e17009c7433cdf3891cc91ddf34a7fc3d844",
+  "data_hashes": {
+    "x": "f5f11033cce1d7f003d758a902f4773673617e3adbfde59b2a1e01e87adec409",
+    "y": "d240307a988caf414541560e4b717cad0f13632ac765278f468842c4673a97fb",
+    "s": "a142310efaeebe77fc896a32637f90cf6c6a656c06404004fe8deadd3e96890e"
+  },
+  "split_hashes": {
+    "train": "bd826825963d7e53c5f07561734e2c5dd3257c3b6d7707f7eaa81f30588a17dd",
+    "val": "c5dc36cf66eb1324bbb58103260b1b02606802c58c95cd8a89a12cb11e019ac9",
+    "calibration": "3295cbefcb6e6318c9922dc0e2a38585e06e7eacfe41f26afa85be9b43e362ce",
+    "audit": "6cbd3f304a05ab9e98a011110a76e03b464b579b335d9d40d9f86c6018f9ac1e"
+  },
+  "code_hashes": {
+    "interfair/baselines/evaluation/ft/runner.py": "881f09ce70f0ade34b7b6a4a707c5fa9f0bbe3af6489a3963b09be6785a80c8b",
+    "interfair/training/shared/common.py": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+    "interfair/vendor/fairer/celeba/utils_train_alexnet.py": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+    "interfair/baselines/resampling/resampling.py": "27a6bb31c31ee0f7821e286b4eb9ad780acdc9b74af44ff78d55fb68a4751149",
+    "interfair/core/preprocessing_baselines.py": "5df99e1ef0595b935f08bce168cbce90b99e2bbd918a8745bfe3b86f3662e9e5",
+    "interfair/core/ft_architecture.py": "bc72712640906b16dd9a9a83aadd3d99bf0e47d10f42e99bcd0454733c69562b",
+    "interfair/vendor/fair_smote/Generate_Samples.py": "79adcb4e3eae381e3dfed23f54c8d04b781baf92c5612d76bc6e9e3891a69bce"
+  },
+  "adaptations": [
+    "Literal native FAIRER DP epoch, device substitution only; sigmoid wrapper around downstream logits.",
+    "Expose base.net only, exactly as the existing native MLP adapter; unused Predictor offsets are excluded from rationale gradients."
+  ],
+  "selection_uses_audit": false,
+  "training_only_preprocessing": true,
+  "training_rows": 31138,
+  "train_x_sha256": "58b2ee6c3e083ae79887ca1494b5fccd864360ad410c77d301b02ad31d992895",
+  "train_y_sha256": "8d772793f730ef6a9f6c072c5effbd8f10bc7085ed4db211246775fc3e581f84",
+  "eta": null,
+  "gradient_clip": null,
+  "rationale_weight": 0.03,
+  "endpoint_weight": 0.3,
+  "batch_per_group": 1000,
+  "steps_per_epoch": 10
+}

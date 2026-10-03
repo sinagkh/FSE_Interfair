@@ -1,0 +1,4 @@
+family,reason,constant_arms,action
+ablation / acs_employment_age / mlp / direction_adverse_decision,official ScottKnottESD undefined with multiple zero-variance arms,no_sign;soft,rank superscripts omitted; all raw metrics and paired tests retained
+ablation / acs_income / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,no_decision;no_sign;soft,rank superscripts omitted; all raw metrics and paired tests retained
+ablation / credit_broad / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,no_sign;soft,rank superscripts omitted; all raw metrics and paired tests retained

@@ -1,0 +1,283 @@
+{
+  "status": "complete",
+  "config": {
+    "task": "hmda_oh",
+    "seed": 1003,
+    "architecture": "ft",
+    "arm": "dralign",
+    "device": "cuda",
+    "epochs": 20,
+    "batch": 512,
+    "optimizer": "Adam lr=.001",
+    "selector": "minimum validation soft-DP at zero-based epochs 3..19",
+    "initial_state_sha256": "ac2e5e5e28472497aae6013515b58508faa55632267702055b6d5eeb735cebf1",
+    "initialization": "source ERM",
+    "source_checkpoint": "interfair/data/partitions/runs/main/ft/hmda_oh/1003/erm/selected.pt",
+    "source_checkpoint_sha256": "95a0c84c4f11bd70e64f71d019bd1fbb3040921d663c20fcd5b0f5099c8c2fd7",
+    "source_state_sha256": "cdf94631a2fb33d42cbd9fd809b79e49bdc975f9e8ec14a510f72c3d6eed4365",
+    "data_hashes": {
+      "x": "2b489405bf8f5f96b48d23cc3a091703615f1f40812f6367e9cc174c12319a70",
+      "y": "28ed2c87d6badb19a33290603ab0701f69bf07d62a1135f855d8336c888d832e",
+      "s": "df812d52b32c91536e785ff558c32557f4e1acd21203c1b9151b43db856574b7"
+    },
+    "split_hashes": {
+      "train": "6ed10c814cc35d4427a838f523ab2e05e12d607e7a732e322747c86037587cec",
+      "val": "5588b459cd7fc7f107488698413c071a466929691ca802d9af1777430cb11f6e",
+      "audit": "d621cddca79bf90c5e7e532e3c8a10a2e35b7aa8dbc131fb99cec29363802bc8",
+      "calibration": "9a24cb40095195149cafa2bb6cf0e279eb3811dbe0e6b7fc7e1318e2c2b06ebf"
+    },
+    "code_hashes": {
+      "interfair/baselines/evaluation/ft/runner.py": "881f09ce70f0ade34b7b6a4a707c5fa9f0bbe3af6489a3963b09be6785a80c8b",
+      "interfair/training/shared/common.py": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+      "interfair/vendor/fairer/celeba/utils_train_alexnet.py": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+      "interfair/baselines/resampling/resampling.py": "27a6bb31c31ee0f7821e286b4eb9ad780acdc9b74af44ff78d55fb68a4751149",
+      "interfair/core/preprocessing_baselines.py": "5df99e1ef0595b935f08bce168cbce90b99e2bbd918a8745bfe3b86f3662e9e5",
+      "interfair/core/ft_architecture.py": "bc72712640906b16dd9a9a83aadd3d99bf0e47d10f42e99bcd0454733c69562b",
+      "interfair/vendor/fair_smote/Generate_Samples.py": "79adcb4e3eae381e3dfed23f54c8d04b781baf92c5612d76bc6e9e3891a69bce"
+    },
+    "adaptations": [
+      "Literal native FAIRER DP epoch, device substitution only; sigmoid wrapper around downstream logits."
+    ],
+    "selection_uses_audit": false,
+    "training_only_preprocessing": true,
+    "training_rows": 39000,
+    "train_x_sha256": "76b9faa4fa553f9b88c26ee58e9d0ef98f5777501a96d30e9aca234b3063db69",
+    "train_y_sha256": "69be9eb0495f442633672691bc5ad97bdbab3d0b2db53aa25a7c97942a0e0198",
+    "eta": null,
+    "gradient_clip": null,
+    "rationale_weight": 0.03,
+    "endpoint_weight": 0.3,
+    "batch_per_group": 1000,
+    "steps_per_epoch": 2
+  },
+  "selected": {
+    "epoch": 3,
+    "soft_dp": 0.021908534062658913,
+    "validation": {
+      "auc": 0.7837590261762972,
+      "ap": 0.9312998365857303,
+      "f1": 0.8927335640138409,
+      "accuracy": 0.80625,
+      "brier": 0.14975967212881308,
+      "bce": 0.476996133462445,
+      "eomax": 0.0,
+      "aod": 0.0,
+      "dp": 0.0,
+      "group_rates": {
+        "0": {
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "positive": 1.0,
+          "n": 6731
+        },
+        "1": {
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "positive": 1.0,
+          "n": 469
+        }
+      }
+    }
+  },
+  "epochs_completed": 19,
+  "checkpoint": "interfair/baselines/evaluation/ft/runs/confirmation/ft/hmda_oh/1003/dralign/selected.pt",
+  "checkpoint_sha256": "c259ecb3aadc84c4eed92de85a081ef7428287b1892204157292f25ad20e63f5",
+  "arrays_sha256": "7c31d6c44824e9a421c36e3d03de2ae7c3a6113d79b5b6d5363174446fd3e0ee",
+  "audit": {
+    "auc": 0.7975800575738712,
+    "ap": 0.9344789533401852,
+    "f1": 0.8926115649083944,
+    "accuracy": 0.8060833333333334,
+    "brier": 0.14906074742464234,
+    "bce": 0.472971833257781,
+    "eomax": 0.003289088781629368,
+    "aod": 0.001644544390814684,
+    "dp": 0.0011847190551780296,
+    "group_rates": {
+      "0": {
+        "tpr": 1.0,
+        "fpr": 0.999515503875969,
+        "positive": 0.9999108337048596,
+        "n": 11215
+      },
+      "1": {
+        "tpr": 1.0,
+        "fpr": 0.9962264150943396,
+        "positive": 0.9987261146496815,
+        "n": 785
+      }
+    },
+    "L_R": 0.0025600012087594578,
+    "violation_005": 0.00017837235228539575,
+    "P_R": 0.0003539082111204064,
+    "decision_disagreement": 4.355780120219532e-05,
+    "opposite_005": 0.0,
+    "P_population_effect_gap": 0.0020071197653587754,
+    "P_mean_common_abs": 0.008522922237777827,
+    "audit_seconds": 4.268243215978146,
+    "audit_model_rows": 118496,
+    "features": [
+      {
+        "feature": "loan_amount",
+        "training": true,
+        "n": 1585,
+        "L_R": 0.0018673968427940875,
+        "violation_005": 0.0,
+        "P_R": 0.00021349639552985437,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0005595804012706661,
+        "P_mean_common_abs": 0.005506686267821062
+      },
+      {
+        "feature": "loan_to_value_ratio",
+        "training": true,
+        "n": 1669,
+        "L_R": 0.001671753631800931,
+        "violation_005": 0.0,
+        "P_R": 0.0002199906511375015,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0009495710341668896,
+        "P_mean_common_abs": 0.004290637617983423
+      },
+      {
+        "feature": "property_value",
+        "training": true,
+        "n": 1583,
+        "L_R": 0.0006265373487526754,
+        "violation_005": 0.0,
+        "P_R": 5.8559721886872666e-05,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0002552065482143101,
+        "P_mean_common_abs": 0.002873283754347935
+      },
+      {
+        "feature": "income",
+        "training": true,
+        "n": 1654,
+        "L_R": 0.0005587610036603196,
+        "violation_005": 0.0,
+        "P_R": 6.245467063571086e-05,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0002486423534786217,
+        "P_mean_common_abs": 0.0018952792447845916
+      },
+      {
+        "feature": "debt_to_income_ratio",
+        "training": true,
+        "n": 1666,
+        "L_R": 0.007017752918160978,
+        "violation_005": 0.0,
+        "P_R": 0.0009129028329267608,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0020088129372106446,
+        "P_mean_common_abs": 0.019060115404221308
+      },
+      {
+        "feature": "tract_minority_population_percent",
+        "training": true,
+        "n": 1766,
+        "L_R": 0.0007815814554893822,
+        "violation_005": 0.0,
+        "P_R": 7.270520987473192e-05,
+        "decision_disagreement": 0.0005662514156285391,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.00023385089395012204,
+        "P_mean_common_abs": 0.0009167924033530124
+      },
+      {
+        "feature": "tract_to_msa_income_percentage",
+        "training": true,
+        "n": 1672,
+        "L_R": 0.0008519634818346306,
+        "violation_005": 0.0,
+        "P_R": 9.638738025653806e-05,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0006131762067125966,
+        "P_mean_common_abs": 0.0024585022593455923
+      },
+      {
+        "feature": "ffiec_msa_md_median_family_income",
+        "training": true,
+        "n": 1628,
+        "L_R": 0.0005047655222749827,
+        "violation_005": 0.0,
+        "P_R": 6.196818622835012e-05,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.000155490344794304,
+        "P_mean_common_abs": 0.001736670884232041
+      },
+      {
+        "feature": "loan_type",
+        "training": true,
+        "n": 1483,
+        "L_R": 0.0017825440124973444,
+        "violation_005": 0.0,
+        "P_R": 0.00022656894820319014,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0012787845374701598,
+        "P_mean_common_abs": 0.006961072350466384
+      },
+      {
+        "feature": "loan_purpose",
+        "training": true,
+        "n": 1725,
+        "L_R": 0.007983080416485884,
+        "violation_005": 0.002318840579710145,
+        "P_R": 0.0013869815153021356,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.007591419710346275,
+        "P_mean_common_abs": 0.03562766875472414
+      },
+      {
+        "feature": "lien_status",
+        "training": true,
+        "n": 1486,
+        "L_R": 0.00039727404252356505,
+        "violation_005": 0.0,
+        "P_R": 3.929850500311104e-05,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0002628657790111526,
+        "P_mean_common_abs": 0.0005131882011727611
+      },
+      {
+        "feature": "preapproval",
+        "training": true,
+        "n": 1193,
+        "L_R": 0.005159052099785881,
+        "violation_005": 0.0,
+        "P_R": 0.0008600101787169872,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.010304298855317801,
+        "P_mean_common_abs": 0.026627134610370876
+      },
+      {
+        "feature": "occupancy_type",
+        "training": true,
+        "n": 1249,
+        "L_R": 0.004077552937812286,
+        "violation_005": 0.0,
+        "P_R": 0.0003894825488635391,
+        "decision_disagreement": 0.0,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.0016308573477205397,
+        "P_mean_common_abs": 0.002330957338288624
+      }
+    ]
+  },
+  "seconds": 57.40620053606108,
+  "batch_sha256": "c58992b08638a7637c2a3b8d8dc71220fbc7462def9c4630e1d9c28542ac722d",
+  "reload_max_error": 0.0,
+  "selection_finished_before_audit": true,
+  "peak_gpu_bytes": 6990692352
+}

@@ -1,0 +1,64 @@
+{
+  "task": "hmda_oh",
+  "seed": 1003,
+  "arm": "erm",
+  "architecture": "official default FT-Transformer",
+  "mode": "erm",
+  "epochs": 100,
+  "patience": 16,
+  "batch": 512,
+  "anchor_batch": 128,
+  "lr": 0.0001,
+  "weight_decay": 1e-05,
+  "optimizer": "official make_default_optimizer",
+  "default_kwargs": {
+    "n_blocks": 3,
+    "d_block": 192,
+    "attention_n_heads": 8,
+    "attention_dropout": 0.2,
+    "ffn_d_hidden": null,
+    "ffn_d_hidden_multiplier": 1.3333333333333333,
+    "ffn_dropout": 0.1,
+    "residual_dropout": 0.0,
+    "_is_default": true
+  },
+  "source": null,
+  "source_sha256": null,
+  "initial_state_sha256": "ac2e5e5e28472497aae6013515b58508faa55632267702055b6d5eeb735cebf1",
+  "interaction_weight": 0,
+  "preserve_weight": 0,
+  "guard_weight": 0,
+  "main_effect_penalty": 0,
+  "rule_forward": "eval mode with gradients enabled",
+  "code_sha256": "9e37b753414748675ae7f304739f166d479d38febb7007f4a79e385977303d93",
+  "vendor": {
+    "commit": "e3ed46cac38568785289d8fa16b8cfa585bde27e",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/README.md",
+        "sha256": "106285b6ce0a24d3be9d09461db6b20037fa6723bcb193ce922dbffb9c7cec4f"
+      },
+      {
+        "path": "pyproject.toml",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/pyproject.toml",
+        "sha256": "47691e63ed5bb88cb88ca189d593c8007e07a3719c7fee7c4c16562a65faafe3"
+      },
+      {
+        "path": "rtdl_revisiting_models.py",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/rtdl_revisiting_models.py",
+        "sha256": "ca7cef3b44cd54b1aeb51f2cc733bef01fbfe3eff00b5c2bd28ca4b4db6b01b2"
+      },
+      {
+        "path": "test_code_blocks.py",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/test_code_blocks.py",
+        "sha256": "8b13abf7b9c515b3b091ead75c3c8fd4b1b20f0b1d61754077ac69943c57ccef"
+      }
+    ]
+  },
+  "concurrency": "1",
+  "audit_used_for_selection": false,
+  "training_bank_sha256": "b8fa89816ba817ca11228ec46a51c24926e2048df6173c57590460bf521d24e8",
+  "sampling_weight_sha256": "9e1e309a367f423e6c800f742161c73dee388e4e3d5b33c53a150d72be8d452a",
+  "requirement": "E14 supported steering budget 8192 per feature; broad P invariance with signed-response preservation"
+}

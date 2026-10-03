@@ -1,0 +1,176 @@
+"""Component ablations of the exact primary from-scratch training protocol."""
+from pathlib import Path as _ArtifactPath
+_PACKAGE = _ArtifactPath(__file__).resolve().parents[2]
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+for k in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS', 'NUMEXPR_NUM_THREADS'):
+    os.environ[k] = '1'
+from pathlib import Path
+import argparse, copy, hashlib, json, math, sys, time
+import numpy as np
+import pandas as pd
+import torch
+from torch.nn import functional as F
+
+P = _PACKAGE / 'studies/requirements'
+ROOT = _PACKAGE
+sys.path.insert(0, str(ROOT / 'training/direction'))
+import direction as q
+c = q.c
+rb = q.rb
+torch.set_num_threads(1)
+
+def directory(task, seed, arm):
+    return ((ROOT/'training/mlp/runs') if arm in ('erm','equality','equality_direction') else (P/'ablations')) / c.phase(seed) / task / str(seed) / arm
+
+def select_key(v, ref):
+    fair = ['aod', 'dp', 'eomax', 'tpr_gap', 'fpr_gap', 'decision_disagreement']
+    excess = [max(0., v[k] - ref[k]) / (ref[k] + .01) for k in fair]
+    excess += [max(0., ref[k] - .02 - v[k]) / .02 for k in ['auc', 'accuracy', 'f1']]
+    excess += [max(0., v['L_R'] - ref['L_R']) / max(ref['L_R'], .01)]
+    admitted = max(excess) <= 1e-12
+    score = v['violation_005'] + v['direction_adverse_005'] + v['decision_disagreement']
+    score += .1 * (v['aod'] + v['dp'] + v['eomax'])
+    return (int(not admitted), sum(excess), score, v['bce']), admitted
+
+def train(task, seed, arm, weight=1., smoke_epochs=None):
+    out = directory(task, seed, arm)
+    if smoke_epochs is not None:
+        out = P / 'smoke' / task / str(seed) / arm
+    if (out / 'DONE.json').exists():
+        return
+    out.mkdir(parents=True, exist_ok=True)
+    if seed<2000:
+        freeze=json.loads((P/'FREEZE.json').read_text())
+        for f,h in freeze['files'].items(): assert c.sha(f)==h,f
+    d, banks, db = q.data(task, seed)
+    names = list(banks)
+    ref = None
+    if arm != 'erm':
+        refpath = directory(task, seed, 'erm') / 'DONE.json'
+        if smoke_epochs is not None:
+            refpath = P / 'smoke' / task / str(seed) / 'erm/DONE.json'
+        refrecord = json.loads(refpath.read_text())
+        ref = refrecord['selected']['validation']
+    c.seed_all(seed)
+    model = c.model(d, 'mlp')
+    initial = c.state_hash(model)
+    if ref is not None:
+        assert initial == refrecord['config']['initial_state_sha256']
+    cfg = c.r.recipe(task, 'mlp', 1.)
+    if arm=='no_equal': cfg['pair']=0.
+    if arm=='no_population':
+        for key in ('score','effect','boundary_score','boundary_effect'): cfg[key]=0.
+    epochs = 40 if smoke_epochs is None else smoke_epochs
+    config = dict(task=task, seed=seed, architecture='mlp', arm=arm,
+                  initialization='fresh seeded random model', initial_state_sha256=initial,
+                  initial_checkpoint=None, pretrained_weights_loaded=False,
+                  teacher_response_penalty=0., fidelity_penalty=0.,
+                  epochs=epochs, task_batch=512, population_batch=512, ordinary_anchors=256,
+                  signed_anchors=256, optimizer='AdamW', lr=.001, weight_decay=.0001,
+                  early_stopping=False, validation_every=5, direction_weight=0. if arm=='equality' else weight,
+                  decision_rate_weight=0. if arm=='no_decision' else 16., decision_response_weight=0. if arm=='no_decision' else 4., fairness_warmup_epochs=5,
+                  soft_recipe=cfg, specification_sha256=c.sha(q.P / 'DIRECTION_SPECIFICATIONS.json'),
+                  trainer_sha256=c.sha(__file__), protocol_sha256=None,
+                  data_hashes={k:c.r.array_hash(d[k]) for k in ['x','y','s']},
+                  split_hashes={k:c.r.array_hash(v) for k,v in d['splits'].items()},
+                  selection_uses_audit=False, device='cpu')
+    c.write(out/'CONFIG.json', config)
+    (out/'TRAINER.py').write_bytes(Path(__file__).read_bytes())
+    x=torch.as_tensor(d['x']); y=torch.as_tensor(d['y']); s=torch.as_tensor(d['s'])
+    tr=d['splits']['train']
+    def pools(bs):
+        result={}
+        for n,b in bs.items():
+            keep=b['supported']; ids=b['indices'][keep]
+            assert np.isin(ids,tr).all()
+            result[n]={'ids':ids,'c':torch.as_tensor(b['corners'][:,keep])}
+        return result
+    ordinary=pools(banks); signed=pools({n:db['train'][n] for n in q.MAP[task]})
+    rng=np.random.default_rng(seed+201); arng=np.random.default_rng(seed+929301)
+    opt=torch.optim.AdamW(model.parameters(),lr=.001,weight_decay=.0001)
+    bh=hashlib.sha256(); ah=hashlib.sha256(); steps=0; queries=0
+    best=None; history=[]; start=time.monotonic()
+    for epoch in range(1,epochs+1):
+        permutation=rng.permutation(tr); warm=min(epoch/5,1.)
+        for off in range(0,len(permutation),512):
+            ids=permutation[off:off+512]; bh.update(ids.tobytes()); steps+=1
+            model.train(); opt.zero_grad(set_to_none=True)
+            loss=F.binary_cross_entropy_with_logits(model(x[ids]),y[ids]); loss.backward()
+            if arm!='erm':
+                model.eval()
+                ii=tr[c.r.balanced_positions(tr,d,arng,512)]; ah.update(ii.tobytes())
+                z=model(x[ii]); queries+=len(ii)
+                loss=c.r.score_loss(z,s[ii],y[ii],cfg)
+                loss+=rb.rate_loss(z,y[ii],{'protected':s[ii]},config['decision_rate_weight'],(.25,.5,1.))
+                (warm*loss).backward()
+                name=names[int(arng.integers(len(names)))]; pool=ordinary[name]
+                jj=c.r.balanced_positions(pool['ids'],d,arng,256); ii=pool['ids'][jj]
+                ah.update(name.encode()); ah.update(ii.tobytes()); cc=pool['c'][:,jj]
+                z=model(cc.reshape(-1,cc.shape[-1])).reshape(4,-1); queries+=cc.shape[0]*cc.shape[1]
+                with torch.no_grad(): nz=model(x[ii]); queries+=len(ii)
+                loss=c.r.pair_effect_loss(z,nz,s[ii],y[ii],cfg)
+                loss+=config['decision_response_weight']*rb.transition_loss(z,False,(.15,.35,.7))
+                (warm*loss).backward()
+                name=list(signed)[int(arng.integers(len(signed)))]; pool=signed[name]
+                jj=c.r.balanced_positions(pool['ids'],d,arng,256); ii=pool['ids'][jj]
+                ah.update(name.encode()); ah.update(ii.tobytes()); cc=pool['c'][:,jj]
+                z=model(cc.reshape(-1,cc.shape[-1])).reshape(4,-1); queries+=cc.shape[0]*cc.shape[1]
+                e=torch.stack([z[1]-z[0],z[3]-z[2]]); residual=e[1]-e[0]
+                loss=cfg['pair']*(residual.square().mean()+.25*c.r.relations.topk_square(residual,.1))
+                adverse=F.relu(-q.MAP[task][name]*e)
+                loss+=config['direction_weight']*(adverse.square().mean()+.25*c.r.relations.topk_square(adverse.flatten(),.1))
+                (warm*loss).backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(),5.)
+            opt.step()
+        if epoch%5==0 or epoch==epochs:
+            v,_=q.evaluate(model,d,names,db,'val')
+            key,admitted=((-v['auc'],v['bce']),True) if arm=='erm' else select_key(v,ref)
+            item=dict(epoch=epoch,steps=steps,validation=v,key=key,admitted=admitted,
+                      seconds=time.monotonic()-start)
+            history.append(item)
+            if best is None or key<tuple(best['key']):
+                best=copy.deepcopy(item)
+                torch.save(dict(state_dict={k:v.detach().clone() for k,v in model.state_dict().items()},config=config,epoch=epoch),out/'selected.pt')
+            c.write(out/'HISTORY.json',history)
+            print(task,seed,arm,epoch,'W',round(v['direction_adverse_005'],4),'R',round(v['L_R'],4),
+                  'D',round(v['decision_disagreement'],4),'AUC',round(v['auc'],4),'admitted',admitted,flush=True)
+    assert steps==epochs*math.ceil(len(tr)/512)
+    c.write(out/'DONE.json',dict(status='complete',config=config,selected=best,
+       checkpoint=str(out/'selected.pt'),checkpoint_sha256=c.sha(out/'selected.pt'),
+       initial_state_sha256=initial,task_batch_sha256=bh.hexdigest(),anchor_sha256=ah.hexdigest(),
+       optimizer_updates=steps,regularizer_model_rows=queries,seconds=time.monotonic()-start,
+       selection_completed_before_audit=True))
+
+def report(phase='development'):
+    rows=[]
+    for p in (P/'runs'/phase).glob('*/*/*/DONE.json'):
+        j=json.loads(p.read_text());cfg=j['config'];v=j['selected']
+        rows.append(dict(task=cfg['task'],seed=cfg['seed'],arm=cfg['arm'],epoch=v['epoch'],admitted=v['admitted'],
+                         optimizer_updates=j['optimizer_updates'],regularizer_model_rows=j['regularizer_model_rows'],**v['validation']))
+    df=pd.DataFrame(rows);df.to_csv(P/(phase+'_validation.csv'),index=False)
+    cols=['direction_adverse_005','L_R','decision_disagreement','aod','dp','eomax','auc','accuracy','f1','admitted']
+    print(df.groupby(['task','arm'])[cols].mean().to_string())
+    checks=[]
+    for task,g in df.groupby('task'):
+        for seed,ss in g.groupby('seed'):
+            if len(ss)!=3: continue
+            js=[json.loads((directory(task,seed,a)/'DONE.json').read_text()) for a in ['erm','equality','equality_direction']]
+            for field in ['initial_state_sha256','task_batch_sha256','optimizer_updates']:
+                assert len({str(j[field]) for j in js})==1,(task,seed,field)
+            for field in ['anchor_sha256','regularizer_model_rows']:
+                assert js[1][field]==js[2][field],(task,seed,field)
+            assert all(not j['config']['pretrained_weights_loaded'] for j in js)
+            checks.append(dict(task=task,seed=int(seed),status='PASS',updates=js[0]['optimizer_updates']))
+    c.write(P/(phase+'_BUDGET_VERIFICATION.json'),dict(status='PASS',triplets=checks,
+            shared_initialization=True,shared_task_batches=True,shared_optimizer_steps=True,
+            paired_is_corner_queries_equal=True,pretrained_weights_loaded=False))
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('command',choices=['train','report'])
+    p.add_argument('--task',choices=list(q.MAP));p.add_argument('--seed',type=int)
+    p.add_argument('--arm',choices=['no_decision','no_equal','no_population']);p.add_argument('--weight',type=float,default=1.)
+    p.add_argument('--smoke-epochs',type=int);p.add_argument('--phase',default='development')
+    a=p.parse_args()
+    if a.command=='train':train(a.task,a.seed,a.arm,a.weight,a.smoke_epochs)
+    else:report(a.phase)

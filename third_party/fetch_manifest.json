@@ -1,0 +1,152 @@
+{
+  "entries": [
+    {
+      "source": "ltdd",
+      "repository": "fairnesstest/LTDD",
+      "commit": "e6cb03deb2d81cbf5e25a3e69bf816e82ec03a27",
+      "destination": "interfair/vendor/ltdd/LTDD_Adult_sex.py",
+      "sha256": "c081d991237dfa74246830324df0d1bddc50e951f90cbc10ef8c5116e2ae720b",
+      "bytes": 9595,
+      "kind": "raw",
+      "url": "https://raw.githubusercontent.com/fairnesstest/LTDD/e6cb03deb2d81cbf5e25a3e69bf816e82ec03a27/LTDD/Adult_sex.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/CoT_Opt.py",
+      "sha256": "8ffd5a4dbdeed7b160baa6df7364a184291af972aa33384ad330ed5030416ca4",
+      "bytes": 5151,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/CoT_Opt.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/CoT_Opt_Para.py",
+      "sha256": "f27421ebda9ba5e85f886f1c5b139c8fbea2a791fa0287da31597874bec23f86",
+      "bytes": 9483,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/CoT_Opt_Para.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/CoT_Opt_dl.py",
+      "sha256": "7294b2d05b65876d58f0fb1463b56a8f54e4425ff22ef357e3313d454188735a",
+      "bytes": 5516,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/CoT_Opt_dl.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/CoT_Phi.py",
+      "sha256": "766aefb7c55adaab32e06c17e43b55b2441dcf16aebdf751c11a2bc22f63758f",
+      "bytes": 5150,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/CoT_Phi.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/CoT_Phi_Para.py",
+      "sha256": "418a05c69f6cb82108f69495796e5d844e1f1b57e2a022e03d78c3ce6f70c6b5",
+      "bytes": 3011,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/CoT_Phi_Para.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/CoT_Phi_dl.py",
+      "sha256": "ee5041c5aa060f4aa663cb75a0b85e07b89a07421e7c9c911e7575b1ec352b07",
+      "bytes": 5506,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/CoT_Phi_dl.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/Measure.py",
+      "sha256": "b5768247208bc212dcbaacd7604d7c02c42a0fc508f0c330e78284a8e3ba3cc7",
+      "bytes": 2151,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/Measure.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/utility.py",
+      "sha256": "bb2152b5e7e55694e15ec1e3d3ec70dec922b54448e729350dcd2325c017de66",
+      "bytes": 3048,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/4_MOO_Exploration/utility.py"
+    },
+    {
+      "source": "cot",
+      "repository": "XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "destination": "interfair/vendor/cot/utility_dl.py",
+      "sha256": "38f68c1bc151dc95fab5b8c18691ff057e2c8a18f10c1f365af4f30eff0f6f28",
+      "bytes": 3286,
+      "kind": "zip_member",
+      "url": "https://raw.githubusercontent.com/XY-Showing/ICSE26-CoT/2730f14eb1fd67321804c5e27e67cadfc99fbdfb/CoT_Materia_New.zip",
+      "archive_sha256": "2b0d05fc7b945592cd7c630ac2797fe64be1b6e1d48a4cc96153894ce24f7d31",
+      "member": "CoT_Materia_New/1_CoT_Code/SingleAttr/utility_dl.py"
+    },
+    {
+      "source": "mirrorfair",
+      "repository": "XY-Showing/FSE2024-MirrorFair",
+      "commit": "b9359f341d525993e4ea7c4d7830b2005fc9265d",
+      "destination": "interfair/vendor/mirrorfair/code/Measure_new.py",
+      "sha256": "e2659664b3d62495a098be5f684c32fc5a36909c90ce1321c9eb3ac7e6c12467",
+      "bytes": 1664,
+      "kind": "raw",
+      "url": "https://raw.githubusercontent.com/XY-Showing/FSE2024-MirrorFair/b9359f341d525993e4ea7c4d7830b2005fc9265d/code/Measure_new.py"
+    },
+    {
+      "source": "mirrorfair",
+      "repository": "XY-Showing/FSE2024-MirrorFair",
+      "commit": "b9359f341d525993e4ea7c4d7830b2005fc9265d",
+      "destination": "interfair/vendor/mirrorfair/code/MirrorFair.py",
+      "sha256": "5d77b3fd396d95834920d6c6903af56fd1c52aec6271dc2a5c67a744abcaea34",
+      "bytes": 6479,
+      "kind": "raw",
+      "url": "https://raw.githubusercontent.com/XY-Showing/FSE2024-MirrorFair/b9359f341d525993e4ea7c4d7830b2005fc9265d/code/MirrorFair.py"
+    },
+    {
+      "source": "mirrorfair",
+      "repository": "XY-Showing/FSE2024-MirrorFair",
+      "commit": "b9359f341d525993e4ea7c4d7830b2005fc9265d",
+      "destination": "interfair/vendor/mirrorfair/code/utility.py",
+      "sha256": "0dd7ed58378b294df23fcafa43e2ff3d978372a896dbb0b2a3d79e8c5f3cd67f",
+      "bytes": 4350,
+      "kind": "raw",
+      "url": "https://raw.githubusercontent.com/XY-Showing/FSE2024-MirrorFair/b9359f341d525993e4ea7c4d7830b2005fc9265d/code/utility.py"
+    }
+  ]
+}

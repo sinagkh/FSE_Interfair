@@ -1,0 +1,4 @@
+family,reason,constant_arms,action
+trained_edits / acs_income / ft / direction_adverse_005,official ScottKnottESD undefined with multiple zero-variance arms,erm;soft,rank superscripts omitted; all raw metrics and paired tests retained
+trained_edits / acs_income / ft / direction_adverse_decision,official ScottKnottESD undefined with multiple zero-variance arms,erm;soft,rank superscripts omitted; all raw metrics and paired tests retained
+trained_edits / acs_income / ft / direction_both_adverse_005,official ScottKnottESD undefined with multiple zero-variance arms,erm;soft,rank superscripts omitted; all raw metrics and paired tests retained

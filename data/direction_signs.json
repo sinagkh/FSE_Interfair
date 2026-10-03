@@ -1,0 +1,44 @@
+{
+  "acs_employment_age": {
+    "education": 1
+  },
+  "acs_employment_sex": {
+    "education": 1
+  },
+  "acs_income": {
+    "education": 1,
+    "hours": 1
+  },
+  "credit_broad": {
+    "PAY_AMT1": 1,
+    "PAY_AMT2": 1,
+    "PAY_AMT3": 1,
+    "PAY_AMT4": 1,
+    "PAY_AMT5": 1,
+    "PAY_AMT6": 1
+  },
+  "hmda_oh": {
+    "income": 1,
+    "debt_to_income_ratio": -1,
+    "loan_to_value_ratio": -1,
+    "linked_income_plus10k": 1
+  },
+  "hmda_md": {
+    "income": 1,
+    "debt_to_income_ratio": -1,
+    "loan_to_value_ratio": -1,
+    "linked_income_plus10k": 1
+  },
+  "hmda_pa": {
+    "income": 1,
+    "debt_to_income_ratio": -1,
+    "loan_to_value_ratio": -1,
+    "linked_income_plus10k": 1
+  },
+  "hmda_va": {
+    "income": 1,
+    "debt_to_income_ratio": -1,
+    "loan_to_value_ratio": -1,
+    "linked_income_plus10k": 1
+  }
+}

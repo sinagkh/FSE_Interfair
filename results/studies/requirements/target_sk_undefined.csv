@@ -1,0 +1,4 @@
+family,reason,constant_arms,action
+target / acs_income / mlp / direction_adverse_decision,official ScottKnottESD undefined with multiple zero-variance arms,behavior_contexts;erm;population_control;task_control,rank superscripts omitted; all raw metrics and paired tests retained
+target / acs_income / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,behavior_features;broad,rank superscripts omitted; all raw metrics and paired tests retained
+target / hmda_oh / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,behavior_features;broad,rank superscripts omitted; all raw metrics and paired tests retained

@@ -1,0 +1,61 @@
+{
+  "task": "hmda_pa",
+  "arm": "fairsmote",
+  "seed": 1005,
+  "mode": "erm",
+  "recipe": {
+    "main": 0.0,
+    "pair": 0.35,
+    "score": 0.2,
+    "effect": 0.4,
+    "boundary_score": 0.15,
+    "boundary_effect": 0.25,
+    "tail": 0.25,
+    "tail_fraction": 0.1,
+    "boundary_band": 0.18,
+    "min_cell": 8,
+    "strength": 1.0,
+    "batch": 512,
+    "anchors": 512,
+    "lr": 0.0007,
+    "weight_decay": 0.0001,
+    "epochs": 40,
+    "patience": null,
+    "warmup": 5,
+    "gradient_clip": 5.0,
+    "selection_min_delta": 0.0001,
+    "auc_floor": null,
+    "credit_auc_budget": 0.01,
+    "f1_ratio": 0.98
+  },
+  "initial_state_sha256": "646e692b60b511afb6fc5de2360f013ba66f3c499e20d75f696f4bdca330fb30",
+  "training_rows": 105257,
+  "train_x_sha256": "603e4c1db4440cc1ca70d28d30074230660aa3f3324a2190fccd129ab6fd0c8f",
+  "train_y_sha256": "8414c38e6c9ddbb2b6031e264fee6cc99f9207884a74c71cc79ff5175cc63a93",
+  "selection": "validation AUROC (BCE tie-break)",
+  "audit_used_for_selection": false,
+  "protocol_sha256": "1db2012593e0828380d06585821c72ae4a5262da8486d48770d9b720706593ec",
+  "code_sha256": "e50d89f881ed50139a2f3338d90243b6e3eb5b76c6d95a1a06752ecf26cac041",
+  "fairsmote": {
+    "before": {
+      "('0', 0)": 7370,
+      "('0', 1)": 28829,
+      "('1', 0)": 1112,
+      "('1', 1)": 1689
+    },
+    "balanced_cell_size": 28829,
+    "balanced_rows": 115316,
+    "removed_by_situation": 10059,
+    "retained": 105257,
+    "seconds": 64.6235267490847,
+    "original_encoding_check": true,
+    "native_generator_sha256": "79adcb4e3eae381e3dfed23f54c8d04b781baf92c5612d76bc6e9e3891a69bce",
+    "native_parameters": {
+      "f": 0.8,
+      "cr": 0.8,
+      "neighbors": 3
+    },
+    "categorical_encoding": "native string branch; logical category codes",
+    "fit_partition": "train only"
+  }
+}

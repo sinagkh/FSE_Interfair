@@ -1,0 +1,272 @@
+{
+  "status": "complete",
+  "config": {
+    "task": "acs_employment_sex",
+    "seed": 1003,
+    "architecture": "mlp",
+    "arm": "hifi_shared",
+    "joint": false,
+    "device": "cpu",
+    "initial_state_sha256": "b02d0aa4ee335cf779c42ad6aca7ca7596a76b04cf336294e4ecbb6c93c9f0fc",
+    "epochs": 40,
+    "batch": 512,
+    "optimizer": "AdamW lr=.001 wd=.0001",
+    "selector": "validation AUROC then BCE; FT patience16",
+    "eta": 0.1,
+    "hifi_source_sha256": "cdc01e6313e297520e94a2280e92dcd43485ae28a9af44f57e04d77250e25ecc",
+    "adapter_sha256": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+    "data_hashes": {
+      "x": "a28fd886abccb50375654d9204e9e0e6e78a501d5839a0e87ae743594f6a30d3",
+      "y": "d240307a988caf414541560e4b717cad0f13632ac765278f468842c4673a97fb",
+      "s": "8c7229b2419c1b5d06f0c8ad310010030631100ca6cc9e274f659d6d3720a0c7"
+    },
+    "split_hashes": {
+      "train": "bd826825963d7e53c5f07561734e2c5dd3257c3b6d7707f7eaa81f30588a17dd",
+      "val": "c5dc36cf66eb1324bbb58103260b1b02606802c58c95cd8a89a12cb11e019ac9",
+      "calibration": "3295cbefcb6e6318c9922dc0e2a38585e06e7eacfe41f26afa85be9b43e362ce",
+      "audit": "6cbd3f304a05ab9e98a011110a76e03b464b579b335d9d40d9f86c6018f9ac1e"
+    },
+    "bank_hashes": {
+      "education": "c3163a51a076335fd0e306b36b8e9b97ae3118f16fd5346b941fe090b417679b",
+      "household": "4e7d29ab539bab84a0c686ca38e30c4de4037b39ab60866d3e753f48ac735e20",
+      "mobility": "dac84b6a492b84e180f89155a194234901ddad9ccf46931a28ab11514c15eba0",
+      "military": "52a90ea8222452861833ef0f4e5c480633ed44c59eaad2f817501dd367d21a3a",
+      "grandchildren": "afd9d97c0813e6cd12059f746a9eaf3ec4063815feff1107fc30664a98f68578"
+    },
+    "training_only_preprocessing": true,
+    "selection_uses_audit": false,
+    "native_hifi_schedule": false,
+    "typed_hifi_adapter": "binary sensitive view; ordinary fields kept in shared encoding",
+    "concurrent_runtime": true,
+    "joint_missing_sex_policy": null,
+    "batch_adapter": "shared paper batch512; HIFI publication uses dataset-specific batches for different benchmark datasets"
+  },
+  "selected": {
+    "epoch": 10,
+    "key": [
+      -0.8705452940907145,
+      0.43248975576518284
+    ],
+    "validation": {
+      "auc": 0.8705452940907145,
+      "ap": 0.903170601600622,
+      "f1": 0.8508877319450007,
+      "accuracy": 0.8070145127850725,
+      "brier": 0.13868446497115683,
+      "bce": 0.43248975576518284,
+      "eomax": 0.06898067603463309,
+      "aod": 0.04820179973233485,
+      "dp": 0.02841444495518275,
+      "group_rates": {
+        "0": {
+          "tpr": 0.9124087591240876,
+          "fpr": 0.2988624612202689,
+          "positive": 0.6965065502183406,
+          "n": 2748
+        },
+        "1": {
+          "tpr": 0.884985835694051,
+          "fpr": 0.367843137254902,
+          "positive": 0.6680921052631579,
+          "n": 3040
+        }
+      }
+    }
+  },
+  "validation": {
+    "behavior": {
+      "auc": 0.8705452940907145,
+      "ap": 0.903170601600622,
+      "f1": 0.8508877319450007,
+      "accuracy": 0.8070145127850725,
+      "brier": 0.13868446497115683,
+      "bce": 0.43248975576518284,
+      "eomax": 0.06898067603463309,
+      "aod": 0.04820179973233485,
+      "dp": 0.02841444495518275,
+      "group_rates": {
+        "0": {
+          "tpr": 0.9124087591240876,
+          "fpr": 0.2988624612202689,
+          "positive": 0.6965065502183406,
+          "n": 2748
+        },
+        "1": {
+          "tpr": 0.884985835694051,
+          "fpr": 0.367843137254902,
+          "positive": 0.6680921052631579,
+          "n": 3040
+        }
+      }
+    }
+  },
+  "selections": {
+    "task": {
+      "validation": {
+        "behavior": {
+          "auc": 0.8705452940907145,
+          "ap": 0.903170601600622,
+          "f1": 0.8508877319450007,
+          "accuracy": 0.8070145127850725,
+          "brier": 0.13868446497115683,
+          "bce": 0.43248975576518284,
+          "eomax": 0.06898067603463309,
+          "aod": 0.04820179973233485,
+          "dp": 0.02841444495518275,
+          "group_rates": {
+            "0": {
+              "tpr": 0.9124087591240876,
+              "fpr": 0.2988624612202689,
+              "positive": 0.6965065502183406,
+              "n": 2748
+            },
+            "1": {
+              "tpr": 0.884985835694051,
+              "fpr": 0.367843137254902,
+              "positive": 0.6680921052631579,
+              "n": 3040
+            }
+          }
+        }
+      }
+    }
+  },
+  "audit": {
+    "auc": 0.863772300508142,
+    "ap": 0.896948974204894,
+    "f1": 0.8451341739411574,
+    "accuracy": 0.7999164578111947,
+    "brier": 0.1425347535822641,
+    "bce": 0.44118705661363805,
+    "eomax": 0.05237712140367007,
+    "aod": 0.0392177582088801,
+    "dp": 0.03751988011668983,
+    "group_rates": {
+      "0": {
+        "tpr": 0.906748050186504,
+        "fpr": 0.3173198482932996,
+        "positive": 0.7009490178768484,
+        "n": 4531
+      },
+      "1": {
+        "tpr": 0.8806896551724138,
+        "fpr": 0.3696969696969697,
+        "positive": 0.6634291377601585,
+        "n": 5045
+      }
+    },
+    "L_R": 0.19618630217086444,
+    "violation_005": 0.8450037162052266,
+    "P_R": 0.03574071267909882,
+    "decision_disagreement": 0.06025019770074175,
+    "opposite_005": 0.14012927974236136,
+    "P_population_effect_gap": 0.029980870356517048,
+    "P_mean_common_abs": 0.041724870197262724,
+    "audit_seconds": 0.13263306400040165,
+    "audit_model_rows": 75112,
+    "features": [
+      {
+        "feature": "education",
+        "training": true,
+        "n": 1875,
+        "L_R": 0.13194333813587825,
+        "violation_005": 0.7632,
+        "P_R": 0.03136961878080431,
+        "decision_disagreement": 0.06453333333333333,
+        "opposite_005": 0.020266666666666665,
+        "P_population_effect_gap": 0.02100958234368971,
+        "P_mean_common_abs": 0.06906046381180529
+      },
+      {
+        "feature": "household",
+        "training": true,
+        "n": 1806,
+        "L_R": 0.17956072948501753,
+        "violation_005": 0.8150609080841639,
+        "P_R": 0.05122174312023768,
+        "decision_disagreement": 0.07918050941306755,
+        "opposite_005": 0.09413067552602436,
+        "P_population_effect_gap": 0.04239386853827091,
+        "P_mean_common_abs": 0.0487069886253862
+      },
+      {
+        "feature": "mobility",
+        "training": true,
+        "n": 1657,
+        "L_R": 0.15242327115170806,
+        "violation_005": 0.8388654194327098,
+        "P_R": 0.023339090300618436,
+        "decision_disagreement": 0.060350030175015085,
+        "opposite_005": 0.09052504526252263,
+        "P_population_effect_gap": 0.013297806301577385,
+        "P_mean_common_abs": 0.033667053502676465
+      },
+      {
+        "feature": "military",
+        "training": true,
+        "n": 1572,
+        "L_R": 0.29568728984217457,
+        "violation_005": 0.9287531806615776,
+        "P_R": 0.04183992765264249,
+        "decision_disagreement": 0.04834605597964377,
+        "opposite_005": 0.32188295165394404,
+        "P_population_effect_gap": 0.03714233715953297,
+        "P_mean_common_abs": 0.02691840087547509
+      },
+      {
+        "feature": "grandchildren",
+        "training": true,
+        "n": 1208,
+        "L_R": 0.22131688223954366,
+        "violation_005": 0.8791390728476821,
+        "P_R": 0.030933183541191175,
+        "decision_disagreement": 0.048841059602649006,
+        "opposite_005": 0.173841059602649,
+        "P_population_effect_gap": 0.036060757439514264,
+        "P_mean_common_abs": 0.03027144417097057
+      },
+      {
+        "feature": "education_hs_bachelor",
+        "training": false,
+        "n": 1875,
+        "L_R": 0.13194333813587825,
+        "violation_005": 0.7632,
+        "P_R": 0.03136961878080431,
+        "decision_disagreement": 0.06453333333333333,
+        "opposite_005": 0.020266666666666665,
+        "P_population_effect_gap": 0.02100958234368971,
+        "P_mean_common_abs": 0.06906046381180529
+      },
+      {
+        "feature": "education_bachelor_master",
+        "training": false,
+        "n": 1856,
+        "L_R": 0.1421688382748659,
+        "violation_005": 0.7370689655172413,
+        "P_R": 0.024797621412955915,
+        "decision_disagreement": 0.043642241379310345,
+        "opposite_005": 0.07058189655172414,
+        "P_population_effect_gap": 0.019111011748160007,
+        "P_mean_common_abs": 0.027253648926592468
+      },
+      {
+        "feature": "household_third",
+        "training": false,
+        "n": 1750,
+        "L_R": 0.7321414658608181,
+        "violation_005": 0.9994285714285714,
+        "P_R": 0.08507434046733595,
+        "decision_disagreement": 0.05142857142857143,
+        "opposite_005": 0.7634285714285715,
+        "P_population_effect_gap": 0.0815722239369779,
+        "P_mean_common_abs": 0.022221566713132242
+      }
+    ]
+  },
+  "checkpoint": "interfair/training/shared/runs/confirmation/main/mlp/acs_employment_sex/1003/hifi_shared/selected.pt",
+  "checkpoint_sha256": "4ad4bbc4d419cfab7c82e8c08446180d9c784042cf9b9969a659807530cd76b5",
+  "arrays_sha256": "f9b8daabe9643eac6b6def6f6ee694766875a21b4a2d1d4572d566aea4ac91a9",
+  "batch_sha256": "5f810b6e9b963a473460ec540335032b8d865c22f8afdfdf0cc10d634d568b93",
+  "seconds": 25.029206177976448,
+  "epochs_completed": 40
+}

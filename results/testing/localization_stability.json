@@ -1,0 +1,324 @@
+{
+ "acs_employment_age/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.6,
+  "min_rho": -0.39999999999999997,
+  "top": "education",
+  "top_in_seeds": 0.5
+ },
+ "acs_employment_sex/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.8999999999999998,
+  "min_rho": 0.49999999999999994,
+  "top": "military",
+  "top_in_seeds": 1.0
+ },
+ "acs_employment_sex/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.7,
+  "min_rho": -0.6,
+  "top": "military",
+  "top_in_seeds": 0.5
+ },
+ "acs_employment_sex/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.49999999999999994,
+  "min_rho": -0.3,
+  "top": "military",
+  "top_in_seeds": 0.5
+ },
+ "acs_employment_sex/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.6,
+  "min_rho": 0.0,
+  "top": "military",
+  "top_in_seeds": 1.0
+ },
+ "acs_employment_sex/mlp/reweighing": {
+  "seeds": 10,
+  "median_rho": 0.7,
+  "min_rho": -0.09999999999999999,
+  "top": "military",
+  "top_in_seeds": 0.4
+ },
+ "acs_income/ft/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.7999999999999999,
+  "min_rho": 0.49999999999999994,
+  "top": "hours",
+  "top_in_seeds": 0.7
+ },
+ "acs_income/ft/erm": {
+  "seeds": 10,
+  "median_rho": 0.8999999999999998,
+  "min_rho": 0.7999999999999999,
+  "top": "hours",
+  "top_in_seeds": 0.6
+ },
+ "acs_income/ft/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.8999999999999998,
+  "min_rho": 0.49999999999999994,
+  "top": "hours",
+  "top_in_seeds": 0.6
+ },
+ "acs_income/ft/reweighing": {
+  "seeds": 10,
+  "median_rho": 0.7999999999999999,
+  "min_rho": 0.19999999999999998,
+  "top": "education",
+  "top_in_seeds": 0.6
+ },
+ "acs_income/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.8999999999999998,
+  "min_rho": 0.6,
+  "top": "hours",
+  "top_in_seeds": 1.0
+ },
+ "acs_income/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.7999999999999999,
+  "min_rho": 0.39999999999999997,
+  "top": "education",
+  "top_in_seeds": 0.5
+ },
+ "acs_income/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.7,
+  "min_rho": 0.19999999999999998,
+  "top": "education",
+  "top_in_seeds": 0.6
+ },
+ "acs_income/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.8999999999999998,
+  "min_rho": 0.6,
+  "top": "hours",
+  "top_in_seeds": 1.0
+ },
+ "credit_broad/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.36883116883116884,
+  "min_rho": -0.10389610389610389,
+  "top": "PAY_5",
+  "top_in_seeds": 0.2
+ },
+ "credit_broad/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.4636363636363636,
+  "min_rho": -0.007792207792207793,
+  "top": "MARRIAGE",
+  "top_in_seeds": 0.3
+ },
+ "credit_broad/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.3766233766233766,
+  "min_rho": -0.23636363636363636,
+  "top": "MARRIAGE",
+  "top_in_seeds": 0.4
+ },
+ "credit_broad/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.7662337662337663,
+  "min_rho": 0.5012987012987012,
+  "top": "PAY_4",
+  "top_in_seeds": 0.6
+ },
+ "hmda_md/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.8516483516483516,
+  "min_rho": 0.6703296703296703,
+  "top": "tract_minority_population_percent",
+  "top_in_seeds": 1.0
+ },
+ "hmda_md/mlp/dralign": {
+  "seeds": 10,
+  "median_rho": 0.8956043956043955,
+  "min_rho": 0.7472527472527472,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.8
+ },
+ "hmda_md/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.8901098901098902,
+  "min_rho": 0.7307692307692307,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.6
+ },
+ "hmda_md/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.8406593406593407,
+  "min_rho": 0.7087912087912087,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.4
+ },
+ "hmda_md/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.8846153846153846,
+  "min_rho": 0.6758241758241759,
+  "top": "loan_type",
+  "top_in_seeds": 0.7
+ },
+ "hmda_md/mlp/reweighing": {
+  "seeds": 10,
+  "median_rho": 0.8406593406593407,
+  "min_rho": 0.46153846153846156,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.5
+ },
+ "hmda_oh/ft/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.9175824175824175,
+  "min_rho": 0.8021978021978022,
+  "top": "preapproval",
+  "top_in_seeds": 0.3
+ },
+ "hmda_oh/ft/erm": {
+  "seeds": 10,
+  "median_rho": 0.8736263736263737,
+  "min_rho": 0.7527472527472527,
+  "top": "preapproval",
+  "top_in_seeds": 1.0
+ },
+ "hmda_oh/ft/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.8901098901098902,
+  "min_rho": 0.6978021978021978,
+  "top": "preapproval",
+  "top_in_seeds": 1.0
+ },
+ "hmda_oh/ft/reweighing": {
+  "seeds": 10,
+  "median_rho": 0.8791208791208791,
+  "min_rho": 0.6263736263736264,
+  "top": "occupancy_type",
+  "top_in_seeds": 0.5
+ },
+ "hmda_oh/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.8076923076923077,
+  "min_rho": 0.5549450549450549,
+  "top": "tract_minority_population_percent",
+  "top_in_seeds": 1.0
+ },
+ "hmda_oh/mlp/dralign": {
+  "seeds": 10,
+  "median_rho": 0.7527472527472527,
+  "min_rho": 0.4835164835164835,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.5
+ },
+ "hmda_oh/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.6703296703296703,
+  "min_rho": 0.34615384615384615,
+  "top": "loan_type",
+  "top_in_seeds": 0.3
+ },
+ "hmda_oh/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.7142857142857143,
+  "min_rho": 0.22527472527472525,
+  "top": "occupancy_type",
+  "top_in_seeds": 0.7
+ },
+ "hmda_oh/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.8351648351648352,
+  "min_rho": 0.7197802197802198,
+  "top": "tract_minority_population_percent",
+  "top_in_seeds": 0.9
+ },
+ "hmda_oh/mlp/neufair": {
+  "seeds": 10,
+  "median_rho": 0.6648351648351648,
+  "min_rho": 0.2802197802197803,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.5
+ },
+ "hmda_pa/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.8186813186813187,
+  "min_rho": 0.5164835164835164,
+  "top": "tract_minority_population_percent",
+  "top_in_seeds": 1.0
+ },
+ "hmda_pa/mlp/dralign": {
+  "seeds": 10,
+  "median_rho": 0.7967032967032966,
+  "min_rho": 0.6373626373626374,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 1.0
+ },
+ "hmda_pa/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.7582417582417583,
+  "min_rho": 0.45604395604395603,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.7
+ },
+ "hmda_pa/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.7252747252747254,
+  "min_rho": 0.3516483516483516,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.2
+ },
+ "hmda_pa/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.8956043956043955,
+  "min_rho": 0.7417582417582418,
+  "top": "tract_minority_population_percent",
+  "top_in_seeds": 0.8
+ },
+ "hmda_pa/mlp/reweighing": {
+  "seeds": 10,
+  "median_rho": 0.7142857142857143,
+  "min_rho": 0.17032967032967034,
+  "top": "loan_to_value_ratio",
+  "top_in_seeds": 0.7
+ },
+ "hmda_va/mlp/cot_phi": {
+  "seeds": 10,
+  "median_rho": 0.6373626373626374,
+  "min_rho": 0.1043956043956044,
+  "top": "loan_type",
+  "top_in_seeds": 0.8
+ },
+ "hmda_va/mlp/dralign": {
+  "seeds": 10,
+  "median_rho": 0.7527472527472527,
+  "min_rho": 0.5,
+  "top": "preapproval",
+  "top_in_seeds": 0.5
+ },
+ "hmda_va/mlp/erm": {
+  "seeds": 10,
+  "median_rho": 0.6538461538461539,
+  "min_rho": 0.39010989010989006,
+  "top": "preapproval",
+  "top_in_seeds": 0.3
+ },
+ "hmda_va/mlp/hifi_shared": {
+  "seeds": 10,
+  "median_rho": 0.6868131868131868,
+  "min_rho": 0.32967032967032966,
+  "top": "preapproval",
+  "top_in_seeds": 0.5
+ },
+ "hmda_va/mlp/ltdd": {
+  "seeds": 10,
+  "median_rho": 0.8461538461538461,
+  "min_rho": 0.6153846153846153,
+  "top": "tract_minority_population_percent",
+  "top_in_seeds": 0.9
+ },
+ "hmda_va/mlp/reweighing": {
+  "seeds": 10,
+  "median_rho": 0.6263736263736264,
+  "min_rho": 0.13186813186813187,
+  "top": "preapproval",
+  "top_in_seeds": 0.1
+ }
+}

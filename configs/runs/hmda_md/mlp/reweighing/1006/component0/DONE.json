@@ -1,0 +1,340 @@
+{
+  "status": "complete",
+  "config": {
+    "task": "hmda_md",
+    "seed": 1006,
+    "architecture": "mlp",
+    "arm": "reweighing",
+    "joint": false,
+    "device": "cpu",
+    "initial_state_sha256": "88901f5dc51a3dc8d02c520b3143ef7e4709575be68b534c30119c3d1aafee84",
+    "epochs": 40,
+    "batch": 512,
+    "optimizer": "AdamW lr=.001 wd=.0001",
+    "selector": "validation AUROC then BCE; FT patience16",
+    "eta": 0.0,
+    "hifi_source_sha256": "cdc01e6313e297520e94a2280e92dcd43485ae28a9af44f57e04d77250e25ecc",
+    "adapter_sha256": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+    "data_hashes": {
+      "x": "513cc85d8099fb76d93b6e8b5382fdf736bb4f4ed2d240a88c5f818fd1ac4cf0",
+      "y": "cc7ec7790ab8e4e132aadb897dc38110dab1951fc7c9f1e60c14b660f8001e0e",
+      "s": "f2d9e767f88bbf2f78f5efb7d395ca1b888c248b3a0996578b38111be3d9c08c"
+    },
+    "split_hashes": {
+      "train": "6fa75dc9b2d039bda291342396198009f5c1c3815746cc2946551b4080491612",
+      "val": "366d5e1c1de36bda432c5a149d3c51fa15f8694f08422eca7d29da5a6062a693",
+      "audit": "24d3228142a120c512b6a9716d21b7e80d5376d6b1aa8fd08d439f6b8fa880e8",
+      "calibration": "0656d4bdaadc101ff8ef860dc8d11a47623591dd3c0209f6d2a0126860d6239f"
+    },
+    "bank_hashes": {
+      "debt_to_income_ratio": "8793f1b860874a66f59f76b459db32bf723340ead65eb05c3ef9b55c686b9a67",
+      "ffiec_msa_md_median_family_income": "77ea2d2333ce0142d0e68c3526f477f39df68b12f9d665481329caf5b965f815",
+      "income": "85327ccee2cf663cdf7aa3bdd3fc9d6505ec3a2be9c29920af3099eed1e28abb",
+      "lien_status": "cf0f3362e199b323d0e747cccac4394b69c14c763b1c15e39552b325f731e157",
+      "loan_amount": "5151ee80fb27d660141ca5c2b8c3bab353c9200429ea052fb1834b0c94cfb585",
+      "loan_purpose": "9841502ae9b3d7d70933d6a9ec81161858cb1342c47ba349a5c78e5e89372068",
+      "loan_to_value_ratio": "69b37838b759fe94eabeb3eecb57951890d65614628034cf3e0b36c97699d1fb",
+      "loan_type": "2852f46ff320cdc76e9829a9a82cb3c22ca2b540b3dda73a5ff876f9c243a105",
+      "occupancy_type": "b7fecd69ad5f386289133ba036a6d5a50676a7a81fe24140cef536805c3f996e",
+      "preapproval": "4c92f68d96695c208e000c1d442f5d00f5ae02907dbdfd9069dbad6fdf30d29a",
+      "property_value": "28c7b3908640cc9ee6dbf4d66109099b5813bbfc89b027e9e80309cc9c8d39ed",
+      "tract_minority_population_percent": "14399eb7ce155b65d9ed0ffa820d99a4f5ca8a6f0b84321fb605a1cf7d3a9261",
+      "tract_to_msa_income_percentage": "20fa705b83531fcc26b0f8d9edbaba566759d60276151b140ca369a79c40d353"
+    },
+    "training_only_preprocessing": true,
+    "selection_uses_audit": false,
+    "native_hifi_schedule": false,
+    "typed_hifi_adapter": "binary sensitive view; ordinary fields kept in shared encoding",
+    "concurrent_runtime": true,
+    "joint_missing_sex_policy": null,
+    "batch_adapter": "shared paper batch512; HIFI publication uses dataset-specific batches for different benchmark datasets"
+  },
+  "selected": {
+    "epoch": 20,
+    "key": [
+      -0.8491142517335379,
+      0.3518596681799664
+    ],
+    "validation": {
+      "auc": 0.8491142517335379,
+      "ap": 0.9425876643000762,
+      "f1": 0.9175006307291229,
+      "accuracy": 0.86375,
+      "brier": 0.10522394052816238,
+      "bce": 0.3518596681799664,
+      "eomax": 0.017669024248681275,
+      "aod": 0.01161858806666502,
+      "dp": 0.06263276051261912,
+      "group_rates": {
+        "0": {
+          "tpr": 0.966230677764566,
+          "fpr": 0.4983127109111361,
+          "positive": 0.8845700824499411,
+          "n": 5094
+        },
+        "1": {
+          "tpr": 0.9606625258799172,
+          "fpr": 0.5159817351598174,
+          "positive": 0.8219373219373219,
+          "n": 2106
+        }
+      }
+    }
+  },
+  "validation": {
+    "behavior": {
+      "auc": 0.8491142517335379,
+      "ap": 0.9425876643000762,
+      "f1": 0.9175006307291229,
+      "accuracy": 0.86375,
+      "brier": 0.10522394052816238,
+      "bce": 0.3518596681799664,
+      "eomax": 0.017669024248681275,
+      "aod": 0.01161858806666502,
+      "dp": 0.06263276051261912,
+      "group_rates": {
+        "0": {
+          "tpr": 0.966230677764566,
+          "fpr": 0.4983127109111361,
+          "positive": 0.8845700824499411,
+          "n": 5094
+        },
+        "1": {
+          "tpr": 0.9606625258799172,
+          "fpr": 0.5159817351598174,
+          "positive": 0.8219373219373219,
+          "n": 2106
+        }
+      }
+    }
+  },
+  "selections": {
+    "task": {
+      "validation": {
+        "behavior": {
+          "auc": 0.8491142517335379,
+          "ap": 0.9425876643000762,
+          "f1": 0.9175006307291229,
+          "accuracy": 0.86375,
+          "brier": 0.10522394052816238,
+          "bce": 0.3518596681799664,
+          "eomax": 0.017669024248681275,
+          "aod": 0.01161858806666502,
+          "dp": 0.06263276051261912,
+          "group_rates": {
+            "0": {
+              "tpr": 0.966230677764566,
+              "fpr": 0.4983127109111361,
+              "positive": 0.8845700824499411,
+              "n": 5094
+            },
+            "1": {
+              "tpr": 0.9606625258799172,
+              "fpr": 0.5159817351598174,
+              "positive": 0.8219373219373219,
+              "n": 2106
+            }
+          }
+        }
+      }
+    }
+  },
+  "audit": {
+    "auc": 0.8529022544141965,
+    "ap": 0.9455950547159532,
+    "f1": 0.9176031850022678,
+    "accuracy": 0.86375,
+    "brier": 0.10458522444041025,
+    "bce": 0.3479343731063789,
+    "eomax": 0.01481260501404702,
+    "aod": 0.012185408447424995,
+    "dp": 0.06551343489768902,
+    "group_rates": {
+      "0": {
+        "tpr": 0.9685983442763346,
+        "fpr": 0.5043830074173972,
+        "positive": 0.8875014724938155,
+        "n": 8489
+      },
+      "1": {
+        "tpr": 0.9590401323955317,
+        "fpr": 0.5191956124314442,
+        "positive": 0.8219880375961265,
+        "n": 3511
+      }
+    },
+    "L_R": 0.27695004295283293,
+    "violation_005": 0.8526740063472391,
+    "P_R": 0.03933902295777809,
+    "decision_disagreement": 0.05985348236735201,
+    "opposite_005": 0.0625246533448748,
+    "P_population_effect_gap": 0.030643312929836148,
+    "P_mean_common_abs": 0.08451778415685406,
+    "audit_seconds": 0.18622274801600724,
+    "audit_model_rows": 118496,
+    "features": [
+      {
+        "feature": "loan_amount",
+        "training": true,
+        "n": 1526,
+        "L_R": 0.23204763462403263,
+        "violation_005": 0.8715596330275229,
+        "P_R": 0.0310653199182002,
+        "decision_disagreement": 0.05701179554390563,
+        "opposite_005": 0.06618610747051114,
+        "P_population_effect_gap": 0.011539389058422767,
+        "P_mean_common_abs": 0.055786435143942666
+      },
+      {
+        "feature": "loan_to_value_ratio",
+        "training": true,
+        "n": 1605,
+        "L_R": 0.5080394099179273,
+        "violation_005": 0.9445482866043614,
+        "P_R": 0.06456002596891415,
+        "decision_disagreement": 0.08411214953271028,
+        "opposite_005": 0.08909657320872275,
+        "P_population_effect_gap": 0.07597307691201421,
+        "P_mean_common_abs": 0.14066393142064812
+      },
+      {
+        "feature": "property_value",
+        "training": true,
+        "n": 1547,
+        "L_R": 0.18296876209700733,
+        "violation_005": 0.788623141564318,
+        "P_R": 0.024142692301934113,
+        "decision_disagreement": 0.049773755656108594,
+        "opposite_005": 0.0491273432449903,
+        "P_population_effect_gap": 0.012886796830963922,
+        "P_mean_common_abs": 0.04277808176983531
+      },
+      {
+        "feature": "income",
+        "training": true,
+        "n": 1517,
+        "L_R": 0.19369447821641958,
+        "violation_005": 0.8068556361239289,
+        "P_R": 0.02970574929582141,
+        "decision_disagreement": 0.05471324983520105,
+        "opposite_005": 0.04482531311799604,
+        "P_population_effect_gap": 0.018286477494419452,
+        "P_mean_common_abs": 0.05882916847003658
+      },
+      {
+        "feature": "debt_to_income_ratio",
+        "training": true,
+        "n": 1509,
+        "L_R": 0.36141033636528264,
+        "violation_005": 0.8959575878064944,
+        "P_R": 0.0560032770373699,
+        "decision_disagreement": 0.0828363154406892,
+        "opposite_005": 0.10337972166998012,
+        "P_population_effect_gap": 0.062430777232035606,
+        "P_mean_common_abs": 0.07701248329455541
+      },
+      {
+        "feature": "tract_minority_population_percent",
+        "training": true,
+        "n": 1674,
+        "L_R": 0.20459700817088713,
+        "violation_005": 0.8195937873357229,
+        "P_R": 0.027546812314635676,
+        "decision_disagreement": 0.035842293906810034,
+        "opposite_005": 0.07646356033452807,
+        "P_population_effect_gap": 0.023150623566607766,
+        "P_mean_common_abs": 0.036704213964630604
+      },
+      {
+        "feature": "tract_to_msa_income_percentage",
+        "training": true,
+        "n": 1697,
+        "L_R": 0.1752056408724015,
+        "violation_005": 0.789628756629346,
+        "P_R": 0.02389501748977718,
+        "decision_disagreement": 0.04890984089569829,
+        "opposite_005": 0.05951679434295816,
+        "P_population_effect_gap": 0.008874761339019578,
+        "P_mean_common_abs": 0.03764301969627172
+      },
+      {
+        "feature": "ffiec_msa_md_median_family_income",
+        "training": true,
+        "n": 1799,
+        "L_R": 0.1747856061696476,
+        "violation_005": 0.7765425236242357,
+        "P_R": 0.023632263159435982,
+        "decision_disagreement": 0.03668704836020011,
+        "opposite_005": 0.11061700944969427,
+        "P_population_effect_gap": 0.024427861999247243,
+        "P_mean_common_abs": 0.021438305940977384
+      },
+      {
+        "feature": "loan_type",
+        "training": true,
+        "n": 1498,
+        "L_R": 0.35535034632810125,
+        "violation_005": 0.8991989319092123,
+        "P_R": 0.05610299669106273,
+        "decision_disagreement": 0.08744993324432576,
+        "opposite_005": 0.0540720961281709,
+        "P_population_effect_gap": 0.08085211591633609,
+        "P_mean_common_abs": 0.1731973853224195
+      },
+      {
+        "feature": "loan_purpose",
+        "training": true,
+        "n": 1663,
+        "L_R": 0.2847197609749173,
+        "violation_005": 0.8725195429945881,
+        "P_R": 0.045799844459724244,
+        "decision_disagreement": 0.0619362597714973,
+        "opposite_005": 0.019242333132892364,
+        "P_population_effect_gap": 0.024453858411157443,
+        "P_mean_common_abs": 0.13823527243963415
+      },
+      {
+        "feature": "lien_status",
+        "training": true,
+        "n": 1426,
+        "L_R": 0.34419313988545164,
+        "violation_005": 0.8906030855539971,
+        "P_R": 0.054029511567247536,
+        "decision_disagreement": 0.0967741935483871,
+        "opposite_005": 0.07924263674614306,
+        "P_population_effect_gap": 0.018700069251319236,
+        "P_mean_common_abs": 0.08877807755904248
+      },
+      {
+        "feature": "preapproval",
+        "training": true,
+        "n": 1289,
+        "L_R": 0.35181983224498475,
+        "violation_005": 0.8991466252909232,
+        "P_R": 0.040902820019151034,
+        "decision_disagreement": 0.03413498836307215,
+        "opposite_005": 0.0,
+        "P_population_effect_gap": 0.03426213368924816,
+        "P_mean_common_abs": 0.1668197577587516
+      },
+      {
+        "feature": "occupancy_type",
+        "training": true,
+        "n": 1294,
+        "L_R": 0.2315186025197668,
+        "violation_005": 0.8299845440494591,
+        "P_R": 0.03402096822784094,
+        "decision_disagreement": 0.04791344667697063,
+        "opposite_005": 0.061051004636785165,
+        "P_population_effect_gap": 0.002525126387078489,
+        "P_mean_common_abs": 0.060845061258357334
+      }
+    ]
+  },
+  "checkpoint": "interfair/training/states/runs/confirmation/hmda_md/1006/reweighing/selected.pt",
+  "checkpoint_sha256": "6603ec3fbef4eb85e8dbde9934a19fa5c641ebdb47675d035adfcf918b855b4c",
+  "arrays_sha256": "8f472317ebeffabaac67ab9f92974e8c29b981b8920526e15036bfe301b048d5",
+  "batch_sha256": "0ca360ea4ba0897a14e5aea3e8d79241c0cb68bec406102868bbcff15ad87cf9",
+  "seconds": 12.777078547980636,
+  "epochs_completed": 40
+}

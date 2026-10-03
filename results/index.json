@@ -1,0 +1,145 @@
+{
+  "joint_complete": {
+    "per_seed": "results/studies/intersectional/joint_complete_per_seed.csv",
+    "summary": "results/studies/intersectional/joint_complete_summary.csv",
+    "paired_tests": "results/studies/intersectional/joint_complete_paired_tests.csv",
+    "sk_ranks": "results/studies/intersectional/joint_complete_sk_ranks.csv"
+  },
+  "target": {
+    "per_seed": "results/studies/requirements/target_per_seed.csv",
+    "summary": "results/studies/requirements/target_summary.csv",
+    "paired_tests": "results/studies/requirements/target_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/target_sk_ranks.csv"
+  },
+  "decision_transfer": {
+    "per_seed": "results/studies/requirements/decision_transfer_per_seed.csv",
+    "summary": "results/studies/requirements/decision_transfer_summary.csv",
+    "paired_tests": "results/studies/requirements/decision_transfer_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/decision_transfer_sk_ranks.csv"
+  },
+  "additional_edits": {
+    "per_seed": "results/studies/requirements/additional_edits_per_seed.csv",
+    "summary": "results/studies/requirements/additional_edits_summary.csv",
+    "paired_tests": "results/studies/requirements/additional_edits_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/additional_edits_sk_ranks.csv"
+  },
+  "configurations": {
+    "admission": "results/studies/architecture_results/VALIDATION_ADMISSION.csv",
+    "audit_exceptions": "results/studies/architecture_results/AUDIT_REGRESSIONS.csv"
+  },
+  "direction_requirements": {
+    "per_seed": "results/main/paper_primary_per_seed.csv",
+    "per_edit": "results/main/primary_direction_per_edit.csv",
+    "tests": "results/studies/architecture_results/primary_complete_paired_tests.csv"
+  },
+  "debugging_replay": {
+    "per_seed": "results/studies/requirements/replay/PER_SEED.csv",
+    "per_feature": "results/studies/requirements/replay/PER_FEATURE.csv"
+  },
+  "fitting_budgets": {
+    "primary": "results/studies/architecture_results/FIT_BUDGETS.csv"
+  },
+  "direction_ablation": {
+    "per_seed": "results/studies/direction_ablation/per_seed.csv",
+    "per_edit": "results/studies/direction_ablation/per_edit.csv",
+    "tests": "results/studies/direction_ablation/paired_tests.csv",
+    "validation": "results/studies/direction_ablation/admission.csv"
+  },
+  "scope": {
+    "per_seed": "results/studies/requirements/scope_per_seed.csv",
+    "summary": "results/studies/requirements/scope_summary.csv",
+    "paired_tests": "results/studies/requirements/scope_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/scope_sk_ranks.csv"
+  },
+  "pool": {
+    "per_seed": "results/studies/requirements/pool_per_seed.csv",
+    "summary": "results/studies/requirements/pool_summary.csv",
+    "paired_tests": "results/studies/requirements/pool_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/pool_sk_ranks.csv"
+  },
+  "policy": {
+    "per_seed": "results/studies/requirements/policy_per_seed.csv",
+    "summary": "results/studies/requirements/policy_summary.csv",
+    "paired_tests": "results/studies/requirements/policy_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/policy_sk_ranks.csv"
+  },
+  "ablation": {
+    "per_seed": "results/studies/requirements/ablation_per_seed.csv",
+    "summary": "results/studies/requirements/ablation_summary.csv",
+    "paired_tests": "results/studies/requirements/ablation_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/ablation_sk_ranks.csv"
+  },
+  "maintenance": {
+    "per_seed": "results/studies/requirements/maintenance_per_seed.csv",
+    "summary": "results/studies/requirements/maintenance_summary.csv",
+    "paired_tests": "results/studies/requirements/maintenance_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/maintenance_sk_ranks.csv"
+  },
+  "trained_edits": {
+    "per_seed": "results/studies/requirements/trained_edits_per_seed.csv",
+    "summary": "results/studies/requirements/trained_edits_summary.csv",
+    "paired_tests": "results/studies/requirements/trained_edits_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/trained_edits_sk_ranks.csv"
+  },
+  "race_trained_joint": {
+    "per_seed": "results/studies/requirements/race_trained_joint_per_seed.csv",
+    "summary": "results/studies/requirements/race_trained_joint_summary.csv",
+    "paired_tests": "results/studies/requirements/race_trained_joint_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/race_trained_joint_sk_ranks.csv"
+  },
+  "income": {
+    "per_seed": "results/main/income_per_seed.csv",
+    "paired_tests": "results/studies/requirements/income_paired_tests.csv"
+  },
+  "classics": {
+    "per_seed": "results/studies/requirements/classics_per_seed.csv",
+    "summary": "results/studies/requirements/classics_summary.csv",
+    "paired_tests": "results/studies/requirements/classics_paired_tests.csv",
+    "sk_ranks": "results/studies/requirements/classics_sk_ranks.csv"
+  },
+  "audit_precision": {
+    "per_replicate": "results/studies/requirements/replay/AUDIT_BUDGET_PER_REPLICATE.csv",
+    "summary": "results/studies/requirements/replay/AUDIT_BUDGET_SUMMARY.csv"
+  },
+  "controlled_origin": {
+    "training_runs": "results/studies/learning_controls/TRAINING_RUNS.csv",
+    "summary": "results/studies/learning_controls/control_summary.csv",
+    "heldout_fit": "results/studies/learning_controls/heldout_fit_per_seed.csv",
+    "inference": "results/studies/learning_controls/controlled_inference.csv"
+  },
+  "probe_schema_and_coverage": {
+    "coverage": "results/studies/edits_and_support/study_coverage.csv"
+  },
+  "additional_native_protocols": {
+    "eo": "results/studies/additional_baselines/full_eo_per_seed.csv",
+    "dice": "results/studies/additional_baselines/full_dice_per_seed.csv"
+  },
+  "audit_interface": {
+    "outcomes": "results/studies/audit_generality/archive_audit_per_seed.csv",
+    "summary": "results/studies/audit_generality/archive_audit_summary.csv"
+  },
+  "pipeline_reference_comparisons": {
+    "measurements": "results/studies/reference_comparisons/full_main_per_seed.csv",
+    "inference": "results/studies/reference_comparisons/full_paired_tests.csv"
+  },
+  "plain_alternatives": {
+    "per_seed": "results/studies/removal_and_additive/per_seed.csv",
+    "summary": "results/studies/removal_and_additive/SUMMARY.csv",
+    "paired_tests": "results/studies/removal_and_additive/paired_tests.csv",
+    "per_edit": "results/studies/removal_and_additive/PER_EDIT.csv",
+    "fit_protocols": "results/studies/removal_and_additive/TRAINING_PROTOCOLS.csv",
+    "independent_metrics": "results/studies/removal_and_additive/INDEPENDENT_METRIC_CHECK.json",
+    "illustrative_probe": "results/studies/removal_and_additive/ILLUSTRATIVE_CASE.json"
+  },
+  "hmda_states": {
+    "per_seed": "results/main/paper_primary_per_seed.csv",
+    "ranks": "results/main/states_sk_ranks.csv",
+    "paired_tests": "results/studies/hmda_states/states_paired_tests.csv",
+    "reference_runs": "results/studies/hmda_states/all_per_seed.csv",
+    "reference_tests": "results/studies/hmda_states/source_paired_tests.csv"
+  },
+  "hmda_states_source": {
+    "per_seed": "results/studies/hmda_states/all_per_seed.csv",
+    "paired_tests": "results/studies/hmda_states/source_paired_tests.csv"
+  }
+}

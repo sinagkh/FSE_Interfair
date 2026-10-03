@@ -1,0 +1,4 @@
+"family","error"
+"trained_edits / acs_income / ft / direction_adverse_005","missing value where TRUE/FALSE needed"
+"trained_edits / acs_income / ft / direction_adverse_decision","missing value where TRUE/FALSE needed"
+"trained_edits / acs_income / ft / direction_both_adverse_005","missing value where TRUE/FALSE needed"

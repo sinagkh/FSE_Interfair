@@ -1,0 +1,24 @@
+{
+  "seed": 1000,
+  "index": 4837,
+  "income_before": 24.0,
+  "income_after": 34.0,
+  "dti_before": 45.0,
+  "new_ratio": 31.764705882352942,
+  "erm_p": [
+    0.8932987484381173,
+    0.9032207674709382,
+    0.850850509113599,
+    0.8419429793681411
+  ],
+  "is_p": [
+    0.8673329731414565,
+    0.9053120389541287,
+    0.8707608900147964,
+    0.9071716337774214
+  ],
+  "erm_residual": -0.1771773099899292,
+  "is_residual": -0.008236050605773926,
+  "eligible": 10,
+  "selection": "First confirmation seed with an eligible supported linked edit, then smallest anchor index; illustration only. Both ERM responses exceed .005 in opposite directions, IS responses both exceed .005, and IS passes equality tolerance."
+}

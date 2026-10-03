@@ -1,0 +1,4 @@
+"family","error"
+"target / acs_income / mlp / direction_adverse_decision","missing value where TRUE/FALSE needed"
+"target / acs_income / mlp / opposite_005","missing value where TRUE/FALSE needed"
+"target / hmda_oh / mlp / opposite_005","missing value where TRUE/FALSE needed"

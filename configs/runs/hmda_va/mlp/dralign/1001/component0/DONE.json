@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "config": {
+    "task": "hmda_va",
+    "seed": 1001,
+    "architecture": "mlp",
+    "arm": "dralign",
+    "source": "interfair/training/states/runs/confirmation/hmda_va/1001/erm_source/selected.pt",
+    "source_sha256": "6e0c47271743124608120be53fbe5d5b6c1947f0fe3c3ad2328f76026469d28d",
+    "adapter_sha256": "386adf2d8f4b93c2267a73f6a08a5e50988c5229ee18346cd0766225eb96a480",
+    "native_adapter_sha256": "7551a79e69d460199e340a9a2377b67793b506481edd94189b7347de6bd811e5",
+    "native_sha256": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+    "epochs": 20,
+    "steps_per_epoch": 6,
+    "batch_per_group": 1000,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "endpoint_weight": 0.3,
+    "rationale_weight": 0.03,
+    "selector": "minimum validation soft DP over epochs 3..19 (zero-based)",
+    "selection_uses_audit": false,
+    "device": "cpu",
+    "initial_state_sha256": "ade52143c3c9c774dc4bc47a37bcf5f807ef8ec4615333aed141554c706e1730"
+  },
+  "selected": {
+    "epoch": 13,
+    "soft_dp": 0.00018703937530517578,
+    "validation": {
+      "auc": 0.8474769318111346,
+      "ap": 0.9509881188687377,
+      "f1": 0.9225165562913907,
+      "accuracy": 0.87,
+      "brier": 0.09913615041831746,
+      "bce": 0.33194514503059636,
+      "eomax": 0.14717873450750163,
+      "aod": 0.0881986872441527,
+      "dp": 0.0019237697573232238,
+      "group_rates": {
+        "0": {
+          "tpr": 0.9497417560588002,
+          "fpr": 0.45401174168297453,
+          "positive": 0.8660832232496698,
+          "n": 6056
+        },
+        "1": {
+          "tpr": 0.9789603960396039,
+          "fpr": 0.6011904761904762,
+          "positive": 0.868006993006993,
+          "n": 1144
+        }
+      }
+    }
+  },
+  "checkpoint": "interfair/training/states/runs/confirmation/hmda_va/1001/dralign/selected.pt",
+  "checkpoint_sha256": "1244fcda7632153d00228e090dd6a8eda3f137eeb33d6446c8cc1a1a097ea12b",
+  "optimizer_updates": 120,
+  "task_rows": 240000,
+  "batch_sha256": "078065c917e153abb8b402d596dab83b4570e1b09bfb1992f90d323154069022",
+  "seconds": 7.356548786978237,
+  "selection_completed_before_audit": true
+}

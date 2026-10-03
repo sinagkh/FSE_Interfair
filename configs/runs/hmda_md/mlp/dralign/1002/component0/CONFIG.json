@@ -1,0 +1,22 @@
+{
+  "task": "hmda_md",
+  "seed": 1002,
+  "architecture": "mlp",
+  "arm": "dralign",
+  "source": "interfair/training/states/runs/confirmation/hmda_md/1002/erm_source/selected.pt",
+  "source_sha256": "1bcae94c78874d7fc883edaf6cb353f03ddfb76c11153023d4110ce3fdf5fb11",
+  "adapter_sha256": "386adf2d8f4b93c2267a73f6a08a5e50988c5229ee18346cd0766225eb96a480",
+  "native_adapter_sha256": "7551a79e69d460199e340a9a2377b67793b506481edd94189b7347de6bd811e5",
+  "native_sha256": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+  "epochs": 20,
+  "steps_per_epoch": 11,
+  "batch_per_group": 1000,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "endpoint_weight": 0.3,
+  "rationale_weight": 0.03,
+  "selector": "minimum validation soft DP over epochs 3..19 (zero-based)",
+  "selection_uses_audit": false,
+  "device": "cpu",
+  "initial_state_sha256": "cb8f242a00ae4d32fe293bd62e66d3aa9613170a87712295efb81535e616c918"
+}

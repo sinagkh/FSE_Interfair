@@ -1,0 +1,20 @@
+{
+  "task": "credit_broad",
+  "seed": 1000,
+  "arm": "dralign",
+  "source": "interfair/data/partitions/runs/main/mlp/default_credit/1000/erm/task.pt",
+  "source_sha256": "6d1cd66fc32b3d2322e97ae1edaa6b06f6eec42204f2f548a3e602be0eaacd55",
+  "upstream_commit": "bee321df01851f339ff7f9b30384a817c23db040",
+  "code_sha256": "c1fe593891ac3475fd0d9af3c80ba764587f6f0eccf5f49b2d1790967ba69724",
+  "upstream_sha256": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+  "protocol_sha256": "e21a31e5f8c1ce2f89a6a161fa4c0af0b3d03b6feebf75dc6a2c8dc9b31f7fed",
+  "batch_per_group": 1000,
+  "steps_per_epoch": 7,
+  "epochs": 20,
+  "lr": 0.001,
+  "endpoint_weight": 0.3,
+  "rationale_weight": 0.03,
+  "training_mode": "post-training common-MLP adaptation",
+  "selector": "minimum validation soft DP gap over zero-based epoch3..19",
+  "audit_used_for_selection": false
+}

@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "config": {
+    "task": "hmda_md",
+    "seed": 1000,
+    "architecture": "mlp",
+    "arm": "dralign",
+    "source": "interfair/training/states/runs/confirmation/hmda_md/1000/erm_source/selected.pt",
+    "source_sha256": "b81e292c5ad84d5e15b27b57ff5d36d2bf60363b8151dc5c58b8232a45764817",
+    "adapter_sha256": "386adf2d8f4b93c2267a73f6a08a5e50988c5229ee18346cd0766225eb96a480",
+    "native_adapter_sha256": "7551a79e69d460199e340a9a2377b67793b506481edd94189b7347de6bd811e5",
+    "native_sha256": "a1030c58341e2a9198aa892ec2e6863d5f6849fad210ce4e64a40f0bb12cf519",
+    "epochs": 20,
+    "steps_per_epoch": 11,
+    "batch_per_group": 1000,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "endpoint_weight": 0.3,
+    "rationale_weight": 0.03,
+    "selector": "minimum validation soft DP over epochs 3..19 (zero-based)",
+    "selection_uses_audit": false,
+    "device": "cpu",
+    "initial_state_sha256": "ce046c401400930365976f83e97456b575c648409c21dc020cff32c3c3932368"
+  },
+  "selected": {
+    "epoch": 18,
+    "soft_dp": 0.0019012689590454102,
+    "validation": {
+      "auc": 0.8313534682883724,
+      "ap": 0.9336375307538793,
+      "f1": 0.9108860328538599,
+      "accuracy": 0.8545833333333334,
+      "brier": 0.11200003283124635,
+      "bce": 0.3721815110879384,
+      "eomax": 0.10541148109910914,
+      "aod": 0.06599966829832382,
+      "dp": 0.01797824824915517,
+      "group_rates": {
+        "0": {
+          "tpr": 0.9395957193816885,
+          "fpr": 0.4364454443194601,
+          "positive": 0.8517864153906557,
+          "n": 5094
+        },
+        "1": {
+          "tpr": 0.966183574879227,
+          "fpr": 0.5418569254185692,
+          "positive": 0.8338081671415005,
+          "n": 2106
+        }
+      }
+    }
+  },
+  "checkpoint": "interfair/training/states/runs/confirmation/hmda_md/1000/dralign/selected.pt",
+  "checkpoint_sha256": "e537d990d7060de9a24d9f1e4a30835fb524bc557691c574f7eedd0d53579f6a",
+  "optimizer_updates": 220,
+  "task_rows": 440000,
+  "batch_sha256": "94fff42f3f0e6d2be7be365d0ecb042fa51d23d0123f0c9add9e7eb0d9aaf8ce",
+  "seconds": 10.829992788960226,
+  "selection_completed_before_audit": true
+}

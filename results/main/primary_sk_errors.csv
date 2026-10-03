@@ -1,0 +1,6 @@
+"family","error"
+"primary_complete / acs_income / ft / direction_adverse_005","missing value where TRUE/FALSE needed"
+"primary_complete / acs_income / ft / direction_adverse_decision","missing value where TRUE/FALSE needed"
+"primary_complete / acs_income / ft / direction_both_adverse_005","missing value where TRUE/FALSE needed"
+"primary_complete / acs_income / mlp / direction_adverse_decision","missing value where TRUE/FALSE needed"
+"primary_complete / hmda_oh / ft / opposite_005","missing value where TRUE/FALSE needed"

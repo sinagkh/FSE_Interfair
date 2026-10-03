@@ -1,0 +1,49 @@
+{
+  "task": "hmda_oh",
+  "seed": 1009,
+  "architecture": "ft",
+  "arm": "reweighing",
+  "joint": false,
+  "device": "cuda",
+  "initial_state_sha256": "884d602d9c1c78af58426ee5a705b5d83330ca5a925ad57ab465588527c7cc7e",
+  "epochs": 100,
+  "batch": 512,
+  "optimizer": "native FT optimizer",
+  "selector": "validation AUROC then BCE; FT patience16",
+  "eta": 0.0,
+  "hifi_source_sha256": "cdc01e6313e297520e94a2280e92dcd43485ae28a9af44f57e04d77250e25ecc",
+  "adapter_sha256": "726503efa443ad0a8e399d768bd38ba01abb191fe72ac271169efbbc47de4c1b",
+  "data_hashes": {
+    "x": "2b489405bf8f5f96b48d23cc3a091703615f1f40812f6367e9cc174c12319a70",
+    "y": "28ed2c87d6badb19a33290603ab0701f69bf07d62a1135f855d8336c888d832e",
+    "s": "df812d52b32c91536e785ff558c32557f4e1acd21203c1b9151b43db856574b7"
+  },
+  "split_hashes": {
+    "train": "6ed10c814cc35d4427a838f523ab2e05e12d607e7a732e322747c86037587cec",
+    "val": "5588b459cd7fc7f107488698413c071a466929691ca802d9af1777430cb11f6e",
+    "audit": "d621cddca79bf90c5e7e532e3c8a10a2e35b7aa8dbc131fb99cec29363802bc8",
+    "calibration": "9a24cb40095195149cafa2bb6cf0e279eb3811dbe0e6b7fc7e1318e2c2b06ebf"
+  },
+  "bank_hashes": {
+    "debt_to_income_ratio": "af76cf28fc2f8758ac21aa4ebacd95ffb99d3f8fd4a56d6c5e9b69fb731d525f",
+    "ffiec_msa_md_median_family_income": "23991c35242579b40c7810b9a4e18a31e8afda16db6c24c6203b98c25808da06",
+    "income": "133bba6f79e46c0579fe73f4efceefd245636b6bd7db615030e497ffaa1ccb9c",
+    "lien_status": "b81989d37c28ae16d63b5efa9c139d0ba0ece4ea26e6c0b608ab6f84da537ae9",
+    "loan_amount": "2b5a941d7deb5977d962c7d849a56ec58150459151e578fa815a0bf9ffea975e",
+    "loan_purpose": "ffe7d72c1a6fd2ed815ce63f7868a12c98afa99521e2412b8fa91e8dcdac60ba",
+    "loan_to_value_ratio": "76be1ee22d3920fa93cbb9b656792d1d24791fa0b051acaeb4772c725458c0b8",
+    "loan_type": "5c85188ba4fe3787ad5088d64ddd2c400d3edd243e4db867206bf0ed295560fe",
+    "occupancy_type": "c7b8532ae2113f183ad1af263cc321b4057fa1cf14e81689761161d3a514d83a",
+    "preapproval": "ea0e49a258343c265660ea08d549b30ca0e0ca8865192642c6f5147749bb592c",
+    "property_value": "32056cd743eeae39d725a22064226f082b6a7e7799c9b641cc584ef1293d5b6c",
+    "tract_minority_population_percent": "8bb71ae9e37ca65bffc991131a9274c09e8c9c60a108d69e8f5d97c117158961",
+    "tract_to_msa_income_percentage": "b33dc53c651d5bb7ae67449e7f004097d885b23e440d5eb45bc8ca0211395739"
+  },
+  "training_only_preprocessing": true,
+  "selection_uses_audit": false,
+  "native_hifi_schedule": false,
+  "typed_hifi_adapter": "binary sensitive view; ordinary fields kept in shared encoding",
+  "concurrent_runtime": true,
+  "joint_missing_sex_policy": null,
+  "batch_adapter": "shared paper batch512; HIFI publication uses dataset-specific batches for different benchmark datasets"
+}

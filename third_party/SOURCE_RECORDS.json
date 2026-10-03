@@ -1,0 +1,133 @@
+{
+  "scope": "Upstream provenance for third-party sources bundled with or fetched by this artifact. Paths are relative to the artifact root.",
+  "sources": [
+    {
+      "name": "HIFI",
+      "distribution": "bundled",
+      "path": "interfair/vendor/HIFI",
+      "repository": "https://github.com/LingfengZhang98/HIFI",
+      "git_tree": "4b588c06990c228942cc963235607c39f7a9ae1a",
+      "license": "MIT",
+      "license_file": {
+        "path": "interfair/vendor/HIFI/LICENSE.txt",
+        "upstream_path": "LICENSE.txt",
+        "sha256": "99e08b517d96b97fac7f7e2d82f470f40e269d57ee2201a968629cf34eccfc74"
+      },
+      "files": [
+        {
+          "path": "interfair/vendor/HIFI/bias_mitigation_methods/hifi.py",
+          "upstream_path": "bias_mitigation_methods/hifi.py",
+          "sha256": "cdc01e6313e297520e94a2280e92dcd43485ae28a9af44f57e04d77250e25ecc"
+        }
+      ]
+    },
+    {
+      "name": "Fair-SMOTE",
+      "distribution": "bundled",
+      "path": "interfair/vendor/fair_smote",
+      "repository": "https://github.com/joymallyac/Fair-SMOTE",
+      "source_ref": "master",
+      "version_identifier": "SHA-256 of the bundled files; no commit was recorded.",
+      "license": "Apache-2.0",
+      "license_file": {
+        "path": "interfair/vendor/fair_smote/LICENSE",
+        "upstream_path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "files": [
+        {
+          "path": "interfair/vendor/fair_smote/Generate_Samples.py",
+          "upstream_path": "Generate_Samples.py",
+          "sha256": "79adcb4e3eae381e3dfed23f54c8d04b781baf92c5612d76bc6e9e3891a69bce"
+        }
+      ]
+    },
+    {
+      "name": "FAIRER / DRAlign",
+      "distribution": "bundled",
+      "path": "interfair/vendor/fairer",
+      "repository": "https://github.com/ltl7155/fairer_submission.git",
+      "commit": "bee321df01851f339ff7f9b30384a817c23db040",
+      "license": "MIT",
+      "license_file": {
+        "path": "interfair/vendor/fairer/LICENSE",
+        "upstream_path": "LICENSE",
+        "sha256": "046857fb7a01b2f83fcd7a3551e8baa1fa785182a19ecd18d96d7dabfda8ef01"
+      }
+    },
+    {
+      "name": "RTDL",
+      "distribution": "bundled",
+      "path": "interfair/vendor/rtdl",
+      "repository": "https://github.com/yandex-research/rtdl-revisiting-models",
+      "commit": "e3ed46cac38568785289d8fa16b8cfa585bde27e",
+      "license": "Apache-2.0",
+      "license_file": {
+        "path": "interfair/vendor/rtdl/LICENSE",
+        "upstream_path": "package/LICENSE",
+        "sha256": "35381b68041ebc3408e1b76ab24ce5eed1f7ea93afd62d109ffdabf1b0daa324"
+      },
+      "files": [
+        {
+          "path": "interfair/vendor/rtdl/rtdl_revisiting_models.py",
+          "upstream_path": "package/rtdl_revisiting_models.py",
+          "sha256": "ca7cef3b44cd54b1aeb51f2cc733bef01fbfe3eff00b5c2bd28ca4b4db6b01b2"
+        }
+      ]
+    },
+    {
+      "name": "LTDD",
+      "distribution": "fetched",
+      "path": "interfair/vendor/ltdd",
+      "repository": "https://github.com/fairnesstest/LTDD",
+      "commit": "e6cb03deb2d81cbf5e25a3e69bf816e82ec03a27",
+      "fetch_manifest": "third_party/fetch_manifest.json",
+      "manifest_source": "ltdd"
+    },
+    {
+      "name": "CoT-Phi",
+      "distribution": "fetched",
+      "path": "interfair/vendor/cot",
+      "repository": "https://github.com/XY-Showing/ICSE26-CoT",
+      "commit": "2730f14eb1fd67321804c5e27e67cadfc99fbdfb",
+      "fetch_manifest": "third_party/fetch_manifest.json",
+      "manifest_source": "cot"
+    },
+    {
+      "name": "MirrorFair",
+      "distribution": "fetched",
+      "path": "interfair/vendor/mirrorfair",
+      "repository": "https://github.com/XY-Showing/FSE2024-MirrorFair",
+      "commit": "b9359f341d525993e4ea7c4d7830b2005fc9265d",
+      "fetch_manifest": "third_party/fetch_manifest.json",
+      "manifest_source": "mirrorfair"
+    },
+    {
+      "name": "ScottKnottESD",
+      "version": "2.0.3",
+      "distribution": "bundled",
+      "path": "environment/R_library/ScottKnottESD",
+      "source_archive": "third_party/R_sources/ScottKnottESD_2.0.3.tar.gz",
+      "source_manifest": "third_party/R_sources.json",
+      "license": "GPL-2.0-or-later",
+      "license_metadata": "environment/R_library/ScottKnottESD/DESCRIPTION",
+      "license_texts": [
+        "third_party/GPL-2",
+        "third_party/GPL-3"
+      ]
+    },
+    {
+      "name": "effsize",
+      "version": "0.8.1",
+      "distribution": "bundled",
+      "path": "environment/R_library/effsize",
+      "source_archive": "third_party/R_sources/effsize_0.8.1.tar.gz",
+      "source_manifest": "third_party/R_sources.json",
+      "license": "GPL-2.0-only",
+      "license_metadata": "environment/R_library/effsize/DESCRIPTION",
+      "license_texts": [
+        "third_party/GPL-2"
+      ]
+    }
+  ]
+}

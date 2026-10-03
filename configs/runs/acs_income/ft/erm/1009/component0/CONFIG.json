@@ -1,0 +1,64 @@
+{
+  "task": "acs_income",
+  "seed": 1009,
+  "arm": "erm",
+  "architecture": "official default FT-Transformer",
+  "mode": "erm",
+  "epochs": 100,
+  "patience": 16,
+  "batch": 512,
+  "anchor_batch": 128,
+  "lr": 0.0001,
+  "weight_decay": 1e-05,
+  "optimizer": "official make_default_optimizer",
+  "default_kwargs": {
+    "n_blocks": 3,
+    "d_block": 192,
+    "attention_n_heads": 8,
+    "attention_dropout": 0.2,
+    "ffn_d_hidden": null,
+    "ffn_d_hidden_multiplier": 1.3333333333333333,
+    "ffn_dropout": 0.1,
+    "residual_dropout": 0.0,
+    "_is_default": true
+  },
+  "source": null,
+  "source_sha256": null,
+  "initial_state_sha256": "c7cf08a8dfff8c2ed4ee0d15698bf6032dde8c7a6cdd97652e55e9e7ff843049",
+  "interaction_weight": 0,
+  "preserve_weight": 0,
+  "guard_weight": 0,
+  "main_effect_penalty": 0,
+  "rule_forward": "eval mode with gradients enabled",
+  "code_sha256": "89ff5757f3c4219d3934691c785865d5d1bba2a0712c7029df13f98375bf928c",
+  "vendor": {
+    "commit": "e3ed46cac38568785289d8fa16b8cfa585bde27e",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/README.md",
+        "sha256": "106285b6ce0a24d3be9d09461db6b20037fa6723bcb193ce922dbffb9c7cec4f"
+      },
+      {
+        "path": "pyproject.toml",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/pyproject.toml",
+        "sha256": "47691e63ed5bb88cb88ca189d593c8007e07a3719c7fee7c4c16562a65faafe3"
+      },
+      {
+        "path": "rtdl_revisiting_models.py",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/rtdl_revisiting_models.py",
+        "sha256": "ca7cef3b44cd54b1aeb51f2cc733bef01fbfe3eff00b5c2bd28ca4b4db6b01b2"
+      },
+      {
+        "path": "test_code_blocks.py",
+        "url": "https://raw.githubusercontent.com/yandex-research/rtdl-revisiting-models/e3ed46cac38568785289d8fa16b8cfa585bde27e/package/test_code_blocks.py",
+        "sha256": "8b13abf7b9c515b3b091ead75c3c8fd4b1b20f0b1d61754077ac69943c57ccef"
+      }
+    ]
+  },
+  "concurrency": "1",
+  "audit_used_for_selection": false,
+  "training_bank_sha256": "5d8949cb28748fa0d69362873abe3769c3594cd51fe792f008ba1cc0b55e5768",
+  "sampling_weight_sha256": "f50218175225c7af586472652e1ab4b8e321b26fa85618ef3b4efec1902be4ce",
+  "requirement": "zero favorable-logit interaction across 5 declared ordinary semantic blocks"
+}

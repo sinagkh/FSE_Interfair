@@ -1,0 +1,59 @@
+{
+  "hmda_oh": {
+    "partition_rows": {
+      "train": 39000,
+      "val": 7200,
+      "audit": 12000,
+      "calibration": 1800
+    },
+    "protected_group_labels": [
+      "White",
+      "Black"
+    ],
+    "retained_context": [
+      "derived_sex",
+      "applicant_age"
+    ],
+    "fit_scope": "training rows only",
+    "source_cache": "data/partitions/cache/hmda_oh_1000.pkl",
+    "encoded_width": 53
+  },
+  "credit_broad": {
+    "partition_rows": {
+      "train": 19495,
+      "val": 3601,
+      "audit": 6004,
+      "calibration": 900
+    },
+    "protected_group_labels": [
+      "male",
+      "female"
+    ],
+    "retained_context": [
+      "AGE"
+    ],
+    "fit_scope": "training rows only",
+    "source_cache": "data/tasks/cache/credit_broad.pkl",
+    "encoded_width": 112
+  },
+  "acs_income": {
+    "partition_rows": {
+      "train": 21482,
+      "val": 3963,
+      "calibration": 996,
+      "audit": 6601
+    },
+    "protected_group_labels": [
+      "male",
+      "female"
+    ],
+    "retained_context": [
+      "AGEP",
+      "RAC1P",
+      "POBP"
+    ],
+    "fit_scope": "training rows only",
+    "source_cache": "data/tasks/cache/acs_income.pkl",
+    "encoded_width": 788
+  }
+}

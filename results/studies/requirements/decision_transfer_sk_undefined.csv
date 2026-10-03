@@ -1,0 +1,2 @@
+family,reason,constant_arms,action
+decision_transfer / hmda_2020_oh / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,no_decision;soft,rank superscripts omitted; all raw metrics and paired tests retained

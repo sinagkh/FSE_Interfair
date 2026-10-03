@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "evaluated_cells": 36,
+  "seeds_per_cell": 10,
+  "missing_cells": [],
+  "source_hashes": {
+    "results/studies/reference_comparisons/full_main_per_seed.csv": "53405db644d65a9daee118ff38a5d1e0695c3506b5f39ead8a4601c809cb0f78",
+    "results/studies/reference_comparisons/full_paired_tests.csv": "9161a8eea0c9ee2560c681995ee7cb6ffbb79f6a0ce319af91c8ccc90e26b569",
+    "results/studies/architecture_results/primary_complete_per_seed.csv": "b149ec309223079a9ac1dd306e1f630a08ad246fafcd34b79b6d0b630150e870",
+    "results/studies/architecture_results/primary_complete_paired_tests.csv": "6921fe8b751e01ee70117da9ffc24233e4c52ff29809a2b88d742319dd2edc05",
+    "results/studies/hmda_states/all_per_seed.csv": "e32362c153be1f5d6f1afd3368146591e7ec1eca8cf2c624183b1e1cdc02a7db",
+    "results/studies/hmda_states/source_paired_tests.csv": "6b398074d7b2efd4189aadfc2b461e1d5cfc508545233946389069715f21637c",
+    "results/studies/requirements/classics_per_seed.csv": "83ae7987cc55e90a320e79f93fb262df28a1820e1bbe706b3622b6573e9e6c16",
+    "results/studies/requirements/classics_paired_tests.csv": "a005c316d46fad96393372930dff8229d7e87079ab8ef4646a35ea723bfe72c6",
+    "results/studies/hmda_fairsmote/per_seed.csv": "1dfb3b712906710f72c1b221794b15585e142ef97c03e511a124ec4ce9f903cf",
+    "results/studies/hmda_fairsmote/paired_tests.csv": "0b418f1e69f9458a635459b478fb37e9e6a4373c796ba0d3897e280ffae42b9e"
+  },
+  "paired_p_values_recomputed": true,
+  "registered_holm_adjustments_preserved": true,
+  "source_means_verified": true
+}

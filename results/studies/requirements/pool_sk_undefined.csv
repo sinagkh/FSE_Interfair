@@ -1,0 +1,3 @@
+family,reason,constant_arms,action
+pool / acs_income / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,pool2048;pool512;soft,rank superscripts omitted; all raw metrics and paired tests retained
+pool / hmda_oh / mlp / opposite_005,official ScottKnottESD undefined with multiple zero-variance arms,pool512;soft,rank superscripts omitted; all raw metrics and paired tests retained

@@ -1,0 +1,40 @@
+{
+  "question": "How do plain protected-input removal, task-only additive construction, and the complete IS procedure compare on the paper's behavioral requirements, population fairness, and utility?",
+  "comparison_type": "Operational comparison of complete procedures; not an architectural ablation.",
+  "primary_metrics": [
+    "auc",
+    "f1",
+    "L_R",
+    "P_R",
+    "decision_disagreement",
+    "direction_adverse_005",
+    "aod",
+    "dp",
+    "P_population_effect_gap"
+  ],
+  "statistics": "One post-hoc family of 54 two-sided paired t-tests: InterFair versus each of removal and additive, three tasks, nine primary metrics. Holm correction across that family. Export mean paired differences, pointwise 95% t intervals, seed win/tie/loss counts, and ratio of means where defined. Technical seeds measure optimization variability on fixed data. Do not test algebraic guarantees against zero or interpret non-significance as equivalence.",
+  "settings": [
+    "hmda_oh",
+    "credit_broad",
+    "acs_income"
+  ],
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "methods": {
+    "erm": "Unconstrained task-trained model.",
+    "removal": "Protected input masked; task binary cross-entropy loss.",
+    "additive": "Shared ordinary-input predictor plus learned protected-group logit offsets; task binary cross-entropy loss.",
+    "is": "InterFair with equality, directional, and population requirements."
+  },
+  "training": "40 epochs and batch size 512. Removal: AdamW, learning rate 0.001, validation AUROC/BCE selection. Additive: learning rate 0.0007, gradient clipping 5, per-epoch AUROC selection. InterFair: learning rate 0.001, clipping 5, requirement-aware selection every five epochs."
+}
